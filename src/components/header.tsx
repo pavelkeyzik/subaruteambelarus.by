@@ -25,6 +25,7 @@ const NavContainer = styled.nav`
 
 const HeaderContainer = styled.div<IEmotionStyledTheme>`
   background: ${props => props.theme.colors.headerBackground};
+  margin-bottom: 40px;
 `;
 
 const NavLink = styled(Link)<IEmotionStyledTheme>`
