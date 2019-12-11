@@ -8,10 +8,15 @@ export interface IEmotionTheme {
     foreground: string;
     background: string;
     middle: string;
-
+    headersColor: string;
     appLogoForeground: string;
     headerBackground: string;
     bodyBackground: string;
+    bodyForeground: string;
+    linkColor: string;
+    blockquoteBackground: string;
+    blockquoteForeground: string;
+    blockquoteBorderColor: string;
   };
 }
 
