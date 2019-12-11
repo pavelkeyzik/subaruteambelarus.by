@@ -8,6 +8,7 @@ import { darkTheme } from '../themes/dark-theme';
 
 const Main = styled.main`
   padding: 0 calc((100vw - 1020px) / 2);
+  margin: 0 1rem;
 `;
 
 function getGlobalStyles(theme: IEmotionTheme) {
