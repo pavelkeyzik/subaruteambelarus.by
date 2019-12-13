@@ -16,5 +16,6 @@ export const darkTheme: IEmotionTheme = {
     blockquoteBackground: '#222131',
     blockquoteForeground: '#9796a6',
     blockquoteBorderColor: '#111122',
+    postPreviewBackground: '#22232e',
   },
 };
