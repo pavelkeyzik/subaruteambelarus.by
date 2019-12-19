@@ -15,7 +15,9 @@ const TopMenu = styled.div`
   justify-content: space-between;
   align-items: center;
   min-height: 70px;
-  padding: 0 calc((100vw - 1020px) / 2);
+  padding: 0 80px;
+  margin: 0 auto;
+  max-width: 1760px;
 `;
 
 const NavContainer = styled.nav`
@@ -42,13 +44,19 @@ const NavLink = styled(Link)<IEmotionStyledTheme>`
   }
 `;
 
+const LogoLink = styled(Link)<IEmotionStyledTheme>`
+  display: flex;
+  align-items: center;
+  color: ${props => props.theme.colors.foreground};
+`;
+
 function Header() {
   return (
     <HeaderContainer>
       <TopMenu>
-        <NavLink to="/">
+        <LogoLink>
           <AppLogo />
-        </NavLink>
+        </LogoLink>
         <NavContainer>
           <NavLink to="/" activeClassName="current-page">
             Главная

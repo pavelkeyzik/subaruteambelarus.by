@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import { IEmotionStyledTheme } from '../types/theme';
 import Image from 'gatsby-image';
+import BackgroundImage from 'gatsby-background-image';
 import { IPost } from '../types/global';
 
 const Article = styled.article<IEmotionStyledTheme>`
@@ -11,24 +12,11 @@ const Article = styled.article<IEmotionStyledTheme>`
   background: ${props => props.theme.colors.postPreviewBackground};
   border-radius: 4px;
   overflow: hidden;
-  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.5);
-  grid-column: span 4;
-  height: 350px;
+  height: 250px;
 
   :nth-of-type(1) {
-    grid-column: span 8;
-    grid-row: span 2;
-  }
-
-  :nth-of-type(2) {
+    height: 550px;
     grid-column: span 4;
-    grid-row: span 2;
-  }
-
-  :nth-of-type(3),
-  :nth-of-type(4) {
-    grid-column: span 6;
-    grid-row: span 1;
   }
 `;
 
@@ -49,31 +37,36 @@ interface IPostPreview {
   post: IPost;
 }
 
+const ImageBackground = styled(BackgroundImage)`
+  display: flex;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+`;
+
 function PostPreview({ post }: IPostPreview) {
   return (
     <Article>
-      <Link
-        to={post.slug}
-        css={css`
-          width: 100%;
-          height: 100%;
-        `}
+      <ImageBackground
+        Tag="section"
+        fluid={post.image.sharp.fluid}
+        alt={post.title}
+        backgroundColor={`#040e18`}
+        fadeIn="soft"
       >
-        <Image fluid={post.image.sharp.fluid} alt={post.title} />
-      </Link>
-      <ArticleContent>
-        <Link
-          to={post.slug}
-          css={css`
-            color: #fff;
-            font-weight: bold;
-            font-size: 1.3rem;
-          `}
-        >
-          {post.title}
-        </Link>
-        {/* <p>{post.excerpt}</p> */}
-      </ArticleContent>
+        <ArticleContent>
+          <Link
+            to={post.slug}
+            css={css`
+              color: #fff;
+              font-weight: bold;
+              font-size: 1.3rem;
+            `}
+          >
+            {post.title}
+          </Link>
+        </ArticleContent>
+      </ImageBackground>
     </Article>
   );
 }

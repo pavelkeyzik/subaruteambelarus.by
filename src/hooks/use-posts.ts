@@ -12,12 +12,11 @@ function usePosts(): IPost[] {
             author
             image {
               sharp: childImageSharp {
-                fluid(maxWidth: 500, maxHeight: 300) {
+                fluid(maxWidth: 1600) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }
-            imageAuthor
           }
           excerpt
         }
@@ -30,7 +29,6 @@ function usePosts(): IPost[] {
     author: post.frontmatter.author,
     slug: post.frontmatter.slug,
     image: post.frontmatter.image,
-    imageAuthor: post.frontmatter.imageAuthor,
     excerpt: post.excerpt,
   }));
 }
