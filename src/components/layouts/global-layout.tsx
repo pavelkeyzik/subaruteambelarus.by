@@ -1,10 +1,10 @@
 import React from 'react';
-import Header from './header';
+import Header from '../header';
 import { Global } from '@emotion/core';
 import { ThemeProvider } from 'emotion-theming';
-import styled from '@emotion/styled';
-import { IEmotionTheme } from '../types/theme';
-import { lightTheme } from '../themes/light-theme';
+import { IEmotionTheme } from '../../types/theme';
+import { lightTheme } from '../../themes/light-theme';
+import Footer from '../footer';
 
 function getGlobalStyles(theme: IEmotionTheme) {
   return `
@@ -23,7 +23,6 @@ function getGlobalStyles(theme: IEmotionTheme) {
         sans-serif;
       font-size: 18px;
       line-height: 1.4;
-      padding-bottom: 40px;
     }
 
     h1,
@@ -69,6 +68,7 @@ function Layout({ children }: ILayout) {
       <Global styles={getGlobalStyles} />
       <Header />
       {children}
+      <Footer />
     </ThemeProvider>
   );
 }

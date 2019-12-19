@@ -14,5 +14,7 @@ export const lightTheme: IEmotionTheme = {
     blockquoteForeground: '#555',
     blockquoteBorderColor: '#888',
     postPreviewBackground: '#22232e',
+    footerBorderColor: '#ccc',
+    footerCopyrightColor: '#888',
   },
 };

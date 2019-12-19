@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Layout from '../layout';
+import GlobalLayout from './global-layout';
 import { layoutConfig } from './config';
 
 interface IArticleLayout {
@@ -23,9 +23,9 @@ const LayoutContainer = styled.main`
 
 function ArticleLayout({ children }: IArticleLayout) {
   return (
-    <Layout>
+    <GlobalLayout>
       <LayoutContainer>{children}</LayoutContainer>
-    </Layout>
+    </GlobalLayout>
   );
 }
 

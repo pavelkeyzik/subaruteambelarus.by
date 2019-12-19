@@ -1,5 +1,4 @@
 import React from 'react';
-import Layout from '../components/layout';
 import PostPreview from '../components/post-preview';
 import usePosts from '../hooks/use-posts';
 import styled from '@emotion/styled';

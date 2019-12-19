@@ -15,6 +15,8 @@ export interface IEmotionTheme {
     blockquoteForeground: string;
     blockquoteBorderColor: string;
     postPreviewBackground: string;
+    footerBorderColor: string;
+    footerCopyrightColor: string;
   };
 }
 
