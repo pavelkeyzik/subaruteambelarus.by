@@ -4,7 +4,7 @@ import { IPost } from '../types/global';
 function usePosts(): IPost[] {
   const data = useStaticQuery(graphql`
     query ListOfPosts {
-      allMdx {
+      allMdx(sort: { fields: [frontmatter___createDate], order: [DESC] }) {
         nodes {
           frontmatter {
             title
