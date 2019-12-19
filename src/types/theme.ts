@@ -4,13 +4,10 @@
 export interface IEmotionTheme {
   colors: {
     primary: string;
-    secondary: string;
     foreground: string;
-    background: string;
-    middle: string;
     headersColor: string;
     appLogoForeground: string;
-    headerBackground: string;
+    headerBorderColor: string;
     bodyBackground: string;
     bodyForeground: string;
     linkColor: string;

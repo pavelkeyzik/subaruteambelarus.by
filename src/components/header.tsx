@@ -26,7 +26,7 @@ const NavContainer = styled.nav`
 `;
 
 const HeaderContainer = styled.div<IEmotionStyledTheme>`
-  background: ${props => props.theme.colors.headerBackground};
+  border-bottom: 1px solid ${props => props.theme.colors.headerBorderColor};
   margin-bottom: 40px;
 `;
 

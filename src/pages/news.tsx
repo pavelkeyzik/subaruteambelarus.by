@@ -19,15 +19,6 @@ function NewsPage() {
         {posts.map(post => (
           <PostPreview key={post.slug} post={post} />
         ))}
-        {posts.map(post => (
-          <PostPreview key={post.slug} post={post} />
-        ))}
-        {posts.map(post => (
-          <PostPreview key={post.slug} post={post} />
-        ))}
-        {posts.map(post => (
-          <PostPreview key={post.slug} post={post} />
-        ))}
       </NewsGrid>
     </Layout>
   );

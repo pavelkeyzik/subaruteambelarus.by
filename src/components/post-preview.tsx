@@ -3,14 +3,14 @@ import { css } from '@emotion/core';
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import { IEmotionStyledTheme } from '../types/theme';
-import Image from 'gatsby-image';
 import BackgroundImage from 'gatsby-background-image';
 import { IPost } from '../types/global';
 
 const Article = styled.article<IEmotionStyledTheme>`
   position: relative;
   background: ${props => props.theme.colors.postPreviewBackground};
-  border-radius: 4px;
+  border-radius: 8px;
+  border: 1px solid ${props => props.theme.colors.headerBorderColor};
   overflow: hidden;
   height: 250px;
 
@@ -30,7 +30,7 @@ const ArticleContent = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   padding: 20px 40px 40px;
-  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 1));
+  background: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 1));
 `;
 
 interface IPostPreview {
@@ -51,7 +51,6 @@ function PostPreview({ post }: IPostPreview) {
         Tag="section"
         fluid={post.image.sharp.fluid}
         alt={post.title}
-        backgroundColor={`#040e18`}
         fadeIn="soft"
       >
         <ArticleContent>

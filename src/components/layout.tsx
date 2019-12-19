@@ -4,7 +4,7 @@ import { Global } from '@emotion/core';
 import { ThemeProvider } from 'emotion-theming';
 import styled from '@emotion/styled';
 import { IEmotionTheme } from '../types/theme';
-import { darkTheme } from '../themes/dark-theme';
+import { lightTheme } from '../themes/light-theme';
 
 const Main = styled.main`
   padding: 0 80px;
@@ -71,7 +71,7 @@ interface ILayout {
 
 function Layout({ children }: ILayout) {
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={lightTheme}>
       <Global styles={getGlobalStyles} />
       <Header />
       <Main>{children}</Main>
