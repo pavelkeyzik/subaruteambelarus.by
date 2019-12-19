@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import Logo from '../../static/assets/logo.svg';
 import styled from '@emotion/styled';
 import { IEmotionStyledTheme } from '../types/theme';
+import { layoutConfig } from './layouts/config';
 
 const AppLogo = styled(Logo)<IEmotionStyledTheme>`
   fill: ${props => props.theme.colors.appLogoForeground};
@@ -15,9 +16,17 @@ const TopMenu = styled.div`
   justify-content: space-between;
   align-items: center;
   min-height: 70px;
-  padding: 0 80px;
   margin: 0 auto;
   max-width: 1760px;
+  padding: 0 ${layoutConfig.small.padding};
+
+  @media screen and (min-width: ${layoutConfig.medium.width}) {
+    padding: 0 ${layoutConfig.medium.padding};
+  }
+
+  @media screen and (min-width: ${layoutConfig.large.width}) {
+    padding: 0 ${layoutConfig.large.padding};
+  }
 `;
 
 const NavContainer = styled.nav`

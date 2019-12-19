@@ -5,6 +5,7 @@ import styled from '@emotion/styled';
 import { IEmotionStyledTheme } from '../types/theme';
 import BackgroundImage from 'gatsby-background-image';
 import { IPost } from '../types/global';
+import { layoutConfig } from './layouts/config';
 
 const Article = styled.article<IEmotionStyledTheme>`
   position: relative;
@@ -15,8 +16,14 @@ const Article = styled.article<IEmotionStyledTheme>`
   height: 250px;
 
   :nth-of-type(1) {
-    height: 550px;
-    grid-column: span 4;
+    @media screen and (min-width: ${layoutConfig.medium.width}) {
+      height: 550px;
+      grid-column: span 2;
+    }
+
+    @media screen and (min-width: ${layoutConfig.large.width}) {
+      grid-column: span 4;
+    }
   }
 `;
 
@@ -30,7 +37,6 @@ const ArticleContent = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   padding: 20px 40px 40px;
-  background: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 1));
 `;
 
 interface IPostPreview {

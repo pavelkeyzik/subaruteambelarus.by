@@ -6,12 +6,6 @@ import styled from '@emotion/styled';
 import { IEmotionTheme } from '../types/theme';
 import { lightTheme } from '../themes/light-theme';
 
-const Main = styled.main`
-  padding: 0 80px;
-  margin: 0 auto;
-  max-width: 1760px;
-`;
-
 function getGlobalStyles(theme: IEmotionTheme) {
   return `
     * {
@@ -74,7 +68,7 @@ function Layout({ children }: ILayout) {
     <ThemeProvider theme={lightTheme}>
       <Global styles={getGlobalStyles} />
       <Header />
-      <Main>{children}</Main>
+      {children}
     </ThemeProvider>
   );
 }

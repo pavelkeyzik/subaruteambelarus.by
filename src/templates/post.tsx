@@ -1,9 +1,7 @@
 import React from 'react';
-import { graphql } from 'gatsby';
-// import { css } from '@emotion/core';
-// import { MDXRenderer } from 'gatsby-plugin-mdx';
-import Layout from '../components/layout';
-// import ReadLink from '../components/read-link';
+import { graphql, Link } from 'gatsby';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+import ArticleLayout from '../components/layouts/article-layout';
 
 export const query = graphql`
   query PostData($slug: String!) {
@@ -19,19 +17,14 @@ export const query = graphql`
 
 function PostTemplate({ data: { mdx: post } }) {
   return (
-    <Layout>
-      hello
-      {/* <h1>{post.frontmatter.title}</h1>
-      <p
-        css={css`
-          font-size: 0.75rem;
-        `}
-      >
-        Posted by {post.frontmatter.author}
-      </p>
+    <ArticleLayout>
+      <Link to="/news">&larr; Все новости</Link>
+      <h2>{post.frontmatter.title}</h2>
       <MDXRenderer>{post.body}</MDXRenderer>
-      <ReadLink to="/">&larr; Back to all posts</ReadLink> */}
-    </Layout>
+      <div style={{ marginTop: 40 }}>
+        Posted by <b>{post.frontmatter.author}</b>
+      </div>
+    </ArticleLayout>
   );
 }
 
