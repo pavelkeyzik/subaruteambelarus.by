@@ -25,6 +25,10 @@ const FooterContent = styled.div`
   border-top: 1px solid ${props => props.theme.colors.footerBorderColor};
   padding: 30px 0 40px;
   margin-top: 100px;
+
+  span {
+    color: ${props => props.theme.colors.footerCopyrightColor};
+  }
 `;
 
 const SocialLinksMenu = styled.nav`
@@ -32,6 +36,10 @@ const SocialLinksMenu = styled.nav`
 
   a {
     margin: 0 0.7rem;
+
+    svg {
+      fill: ${props => props.theme.colors.socialsColor};
+    }
 
     :last-child {
       margin-right: 0;

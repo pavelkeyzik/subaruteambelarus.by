@@ -16,5 +16,6 @@ export const lightTheme: IEmotionTheme = {
     postPreviewBackground: '#22232e',
     footerBorderColor: '#ccc',
     footerCopyrightColor: '#888',
+    socialsColor: '#333',
   },
 };

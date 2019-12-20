@@ -17,6 +17,7 @@ export interface IEmotionTheme {
     postPreviewBackground: string;
     footerBorderColor: string;
     footerCopyrightColor: string;
+    socialsColor: string;
   };
 }
 
