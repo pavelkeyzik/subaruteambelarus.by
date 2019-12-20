@@ -2,7 +2,7 @@ import React from 'react';
 import PostPreview from '../components/post-preview';
 import usePosts from '../hooks/use-posts';
 import styled from '@emotion/styled';
-import MainLayout from '../components/layouts/main-layout';
+import MainLayout from '../components/layouts/main';
 import { layoutConfig } from '../components/layouts/config';
 
 const NewsGrid = styled.section`

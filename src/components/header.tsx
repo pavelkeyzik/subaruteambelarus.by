@@ -34,9 +34,14 @@ const NavContainer = styled.nav`
   align-items: center;
 `;
 
-const HeaderContainer = styled.div<IEmotionStyledTheme>`
+const TopMenuContainer = styled.div<IEmotionStyledTheme>`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  background: ${props => props.theme.colors.bodyBackground};
   border-bottom: 1px solid ${props => props.theme.colors.headerBorderColor};
-  margin-bottom: 40px;
 `;
 
 const NavLink = styled(Link)<IEmotionStyledTheme>`
@@ -61,7 +66,7 @@ const LogoLink = styled(Link)<IEmotionStyledTheme>`
 
 function Header() {
   return (
-    <HeaderContainer>
+    <TopMenuContainer>
       <TopMenu>
         <LogoLink>
           <AppLogo />
@@ -75,7 +80,7 @@ function Header() {
           </NavLink>
         </NavContainer>
       </TopMenu>
-    </HeaderContainer>
+    </TopMenuContainer>
   );
 }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import ArticleLayout from '../components/layouts/article-layout';
+import ArticleLayout from '../components/layouts/article';
 
 export const query = graphql`
   query PostData($slug: String!) {
