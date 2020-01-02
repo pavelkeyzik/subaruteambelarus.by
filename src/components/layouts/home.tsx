@@ -3,6 +3,9 @@ import Layout from './global';
 import Header from '../main-header';
 import styled from '@emotion/styled';
 import { layoutConfig } from '../../components/layouts/config';
+import FAQ from '../faq';
+import StayUpdated from '../stay-updated';
+import LastArticle from '../last-article';
 
 const LayoutContainer = styled.main`
   max-width: 1760px;
@@ -18,11 +21,17 @@ const LayoutContainer = styled.main`
   }
 `;
 
-function HomeLayout({ children }) {
+function HomeLayout() {
   return (
     <Layout>
       <Header />
-      <LayoutContainer>{children}</LayoutContainer>
+      <LayoutContainer>
+        <LastArticle />
+      </LayoutContainer>
+      <StayUpdated />
+      <LayoutContainer>
+        <FAQ />
+      </LayoutContainer>
     </Layout>
   );
 }
