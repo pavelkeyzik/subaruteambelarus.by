@@ -68,7 +68,7 @@ function Header() {
   return (
     <TopMenuContainer>
       <TopMenu>
-        <LogoLink>
+        <LogoLink to="/">
           <AppLogo />
         </LogoLink>
         <NavContainer>
