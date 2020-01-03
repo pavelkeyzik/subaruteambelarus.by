@@ -44,7 +44,7 @@ function LastArticle() {
         <TagTitle>Новости</TagTitle>
         <h2>{data.title}</h2>
         <p>{data.excerpt}</p>
-        <Link to={data.slug}>Читать подробнее &rarr;</Link>
+        <Link to={`/${data.slug}`}>Читать подробнее &rarr;</Link>
       </div>
     </Section>
   );
