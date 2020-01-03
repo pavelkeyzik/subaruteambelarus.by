@@ -14,7 +14,7 @@ function useLastPost(): IPost {
             slug
             image {
               sharp: childImageSharp {
-                fluid(maxWidth: 600, maxHeight: 400) {
+                fluid(maxWidth: 600) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }
