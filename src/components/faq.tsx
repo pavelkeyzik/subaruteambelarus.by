@@ -1,18 +1,27 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { layoutConfig } from './layouts/config';
 
 const Section = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 40px 0;
-  padding: 0 120px;
+
+  @media screen and (min-width: ${layoutConfig.medium.width}) {
+    padding: 0 120px;
+  }
 `;
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 20px;
+  grid-template-columns: 1fr;
+
+  @media screen and (min-width: ${layoutConfig.medium.width}) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 60px;
+    grid-row-gap: 20px;
+  }
 `;
 
 function FAQ() {

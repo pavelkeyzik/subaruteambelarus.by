@@ -11,6 +11,7 @@ const Section = styled.section`
   background: ${props => props.theme.colors.foreground};
   padding: 40px 0;
   color: #fff;
+  text-align: center;
 `;
 
 const SectionTitle = styled.h2`

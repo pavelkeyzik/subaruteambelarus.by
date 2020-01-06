@@ -21,9 +21,6 @@ function PostTemplate({ data: { mdx: post } }) {
       <Link to="/news">&larr; Все новости</Link>
       <h2>{post.frontmatter.title}</h2>
       <MDXRenderer>{post.body}</MDXRenderer>
-      <div style={{ marginTop: 40 }}>
-        Posted by <b>{post.frontmatter.author}</b>
-      </div>
     </ArticleLayout>
   );
 }

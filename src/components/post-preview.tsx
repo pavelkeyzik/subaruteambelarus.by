@@ -61,7 +61,7 @@ function PostPreview({ post }: IPostPreview) {
       >
         <ArticleContent>
           <Link
-            to={`/${post.slug}`}
+            to={`/news/${post.slug}`}
             css={css`
               color: #fff;
               font-weight: bold;

@@ -1,5 +1,5 @@
 import React from 'react';
-import PostPreview from '../components/post-preview';
+import PostPreview from '../components/post-preview-old';
 import usePosts from '../hooks/use-posts';
 import styled from '@emotion/styled';
 import MainLayout from '../components/layouts/main';
@@ -16,7 +16,7 @@ const NewsGrid = styled.section`
   }
 
   @media screen and (min-width: ${layoutConfig.large.width}) {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 `;
 
@@ -24,6 +24,7 @@ function NewsPage() {
   const posts = usePosts();
   return (
     <MainLayout>
+      <h2>Новости</h2>
       <NewsGrid>
         {posts.map(post => (
           <PostPreview key={post.slug} post={post} />

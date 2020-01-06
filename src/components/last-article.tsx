@@ -4,13 +4,18 @@ import { Link } from 'gatsby';
 import Image from 'gatsby-image';
 import useLastPost from '../hooks/use-last-post';
 import { css } from '@emotion/core';
+import { layoutConfig } from './layouts/config';
 
 const Section = styled.section`
   display: grid;
-  grid-template-columns: 600px 1fr;
-  margin-top: 30px;
-  grid-gap: 60px;
-  padding: 80px 0;
+  align-items: flex-start;
+  grid-gap: 30px;
+  padding: 110px 0 80px;
+
+  @media screen and (min-width: ${layoutConfig.small.width}) {
+    grid-template-columns: 6fr 6fr;
+    grid-gap: 60px;
+  }
 `;
 
 const ImageContainer = styled.div`
@@ -46,7 +51,7 @@ function LastArticle() {
         <TagTitle>Последние новости</TagTitle>
         <h2>{data.title}</h2>
         <p>{data.excerpt}</p>
-        <Link to={`/${data.slug}`}>Читать подробнее &rarr;</Link>
+        <Link to={`/news/${data.slug}`}>Читать подробнее &rarr;</Link>
       </div>
     </Section>
   );
