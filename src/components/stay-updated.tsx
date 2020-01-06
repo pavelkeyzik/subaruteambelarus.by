@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Link } from 'gatsby';
 import Instagram from '../../static/assets/instagram.svg';
 import Vk from '../../static/assets/vk.svg';
 import Youtube from '../../static/assets/youtube.svg';
@@ -9,7 +8,7 @@ const Section = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: ${props => props.theme.colors.primary};
+  background: ${props => props.theme.colors.foreground};
   padding: 40px 0;
   color: #fff;
 `;
@@ -39,11 +38,11 @@ function StayUpdated() {
         социальные сети
       </p>
       <SocialLinks>
-        <a href="https://instagram.com/subaruteambelarus.by" target="_blank">
-          <Instagram width="48" height="48" />
-        </a>
         <a href="https://vk.com/subaru_team_belarus" target="_blank">
           <Vk width="48" height="48" />
+        </a>
+        <a href="https://instagram.com/subaruteambelarus.by" target="_blank">
+          <Instagram width="48" height="48" />
         </a>
         <a
           href="https://www.youtube.com/user/Skew4eg315/videos"
