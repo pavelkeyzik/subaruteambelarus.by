@@ -8,6 +8,7 @@ import { css } from '@emotion/core';
 const Section = styled.section`
   display: grid;
   grid-template-columns: 600px 1fr;
+  margin-top: 30px;
   grid-gap: 60px;
   padding: 80px 0;
 `;

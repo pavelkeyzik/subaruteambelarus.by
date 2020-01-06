@@ -1,6 +1,5 @@
 import React from 'react';
 import Layout from './global';
-import Header from '../main-header';
 import styled from '@emotion/styled';
 import { layoutConfig } from '../../components/layouts/config';
 import FAQ from '../faq';
@@ -24,7 +23,6 @@ const LayoutContainer = styled.main`
 function HomeLayout() {
   return (
     <Layout>
-      <Header />
       <LayoutContainer>
         <LastArticle />
       </LayoutContainer>
