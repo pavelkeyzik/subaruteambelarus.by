@@ -39,7 +39,7 @@ function LastArticle() {
     <Section>
       <ImageContainer>
         <Link
-          to={`/${data.slug}`}
+          to={`/news/${data.slug}`}
           css={css`
             width: 100%;
           `}
