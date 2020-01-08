@@ -21,18 +21,27 @@ const FooterContainer = styled.footer`
 
 const FooterContent = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   border-top: 1px solid ${props => props.theme.colors.footerBorderColor};
   padding: 30px 0 40px;
-
-  @media screen and (min-width: ${layoutConfig.medium.width}) {
-    margin-top: 100px;
-  }
 
   span {
     color: ${props => props.theme.colors.footerCopyrightColor};
     font-size: 0.75rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  @media screen and (min-width: ${layoutConfig.small.width}) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 100px;
+
+    span {
+      margin-bottom: 0;
+    }
   }
 `;
 
