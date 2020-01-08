@@ -2,9 +2,11 @@ import React from 'react';
 import Header from '../header';
 import { Global } from '@emotion/core';
 import { ThemeProvider } from 'emotion-theming';
+import Helmet from 'react-helmet';
 import { IEmotionTheme } from '../../types/theme';
 import { lightTheme } from '../../themes/light-theme';
 import Footer from '../footer';
+import useSiteMetadata from '../../hooks/use-sitemetadata';
 
 function getGlobalStyles(theme: IEmotionTheme) {
   return `
@@ -63,9 +65,18 @@ interface ILayout {
 }
 
 function Layout({ children }: ILayout) {
+  const { siteName, title, description } = useSiteMetadata();
+
   return (
     <ThemeProvider theme={lightTheme}>
       <Global styles={getGlobalStyles} />
+      <Helmet>
+        <html lang="ru" />
+        <title>
+          {siteName} - {title}
+        </title>
+        <meta name="description" content={description} />
+      </Helmet>
       <Header />
       {children}
       <Footer />

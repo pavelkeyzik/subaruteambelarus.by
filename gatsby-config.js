@@ -5,11 +5,18 @@
  */
 
 module.exports = {
+  siteMetadata: {
+    siteName: 'SUBARU TEAM BELARUS',
+    title: 'Официальный сайт клуба Субару в Беларуси',
+    description:
+      'Здесь вы можете найти новости о нашем клубе, а также узнать как с нами познакомиться поближе и не пропускать наши встречи',
+  },
   plugins: [
     'gatsby-plugin-emotion',
     'gatsby-plugin-typescript',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-filesystem',
       options: { path: `./static/images/` },

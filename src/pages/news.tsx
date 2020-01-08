@@ -2,8 +2,10 @@ import React from 'react';
 import PostPreview from '../components/post-preview-old';
 import usePosts from '../hooks/use-posts';
 import styled from '@emotion/styled';
+import Helmet from 'react-helmet';
 import MainLayout from '../components/layouts/main';
 import { layoutConfig } from '../components/layouts/config';
+import useSiteMetadata from '../hooks/use-sitemetadata';
 
 const NewsGrid = styled.section`
   display: grid;
@@ -21,10 +23,18 @@ const NewsGrid = styled.section`
 `;
 
 function NewsPage() {
+  const pageTitle = 'Новости';
   const posts = usePosts();
+  const { siteName } = useSiteMetadata();
+
   return (
     <MainLayout>
-      <h2>Новости</h2>
+      <Helmet>
+        <title>
+          {siteName} - {pageTitle}
+        </title>
+      </Helmet>
+      <h2>{pageTitle}</h2>
       <NewsGrid>
         {posts.map(post => (
           <PostPreview key={post.slug} post={post} />
