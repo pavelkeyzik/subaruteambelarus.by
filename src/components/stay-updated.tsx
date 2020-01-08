@@ -9,7 +9,7 @@ const Section = styled.section`
   flex-direction: column;
   align-items: center;
   background: ${props => props.theme.colors.foreground};
-  padding: 40px 0;
+  padding: 40px 20px;
   color: #fff;
   text-align: center;
 `;
