@@ -45,12 +45,16 @@ const NavLink = styled(Link)<IEmotionStyledTheme>`
   align-items: center;
   color: ${props => props.theme.colors.foreground};
   text-decoration: none;
-  margin: 0 1rem;
+  margin: 0 0.5rem;
   padding: 0.2rem 0;
   border-bottom: 2px solid transparent;
 
   &.current-page {
     border-bottom: 2px solid ${props => props.theme.colors.primary};
+  }
+
+  @media screen and (min-width: ${layoutConfig.small.width}) {
+    margin: 0 1rem;
   }
 `;
 

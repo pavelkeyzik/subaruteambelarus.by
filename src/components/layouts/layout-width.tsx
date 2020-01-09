@@ -5,11 +5,15 @@ import { layoutConfig } from './config';
 
 const Root = styled.div`
   max-width: 1760px;
-  margin: 50px auto 0;
+  margin: 30px auto 0;
+
+  @media screen and (min-width: ${layoutConfig.small.width}) {
+    margin: 60px auto 0;
+  }
 `;
 
 const Inner = styled.div`
-  margin: 60px 16px 0;
+  margin: 30px 16px 0;
   padding: 0 20px;
   background: #fff;
   border: 1px solid ${props => props.theme.colors.headerBorderColor};

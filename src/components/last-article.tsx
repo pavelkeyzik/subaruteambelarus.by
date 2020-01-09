@@ -10,11 +10,12 @@ const Section = styled.section`
   display: grid;
   align-items: flex-start;
   grid-gap: 30px;
-  padding: 60px 0;
+  padding: 30px 0;
 
   @media screen and (min-width: ${layoutConfig.small.width}) {
     grid-template-columns: 6fr 6fr;
     grid-gap: 60px;
+    padding: 60px 0;
   }
 `;
 

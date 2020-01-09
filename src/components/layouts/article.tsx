@@ -9,7 +9,11 @@ interface IArticleLayout {
 
 const LayoutContainer = styled.div`
   max-width: 1760px;
-  margin: 60px auto 0;
+  margin: 30px auto 0;
+
+  @media screen and (min-width: ${layoutConfig.small.width}) {
+    margin: 60px auto 0;
+  }
 `;
 
 const LayoutContainerInner = styled.main`
