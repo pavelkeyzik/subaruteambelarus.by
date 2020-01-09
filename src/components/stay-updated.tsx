@@ -37,7 +37,7 @@ const SocialLinks = styled.div`
 function StayUpdated() {
   return (
     <Section>
-      <SectionTitle>Оставайся в курсе последних новостией</SectionTitle>
+      <SectionTitle>Оставайся в курсе последних новостей</SectionTitle>
       <p>
         Чтобы не пропустить новости и мероприятия, подписывайтесь на наши
         социальные сети
