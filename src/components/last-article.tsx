@@ -21,9 +21,7 @@ const Section = styled.section`
 const ImageContainer = styled.div`
   display: flex;
   justify-content: flex-start;
-  border-radius: 16px;
   background: #e9e9ec;
-  box-shadow: 9px 9px 9px #ddd, -9px -9px 9px #fff;
 `;
 
 const TagTitle = styled.span`
@@ -44,12 +42,14 @@ function LastArticle() {
             width: 100%;
           `}
         >
-          <Image fluid={data.image.sharp.fluid} style={{ borderRadius: 16 }} />
+          <Image fluid={data.image.sharp.fluid} />
         </Link>
       </ImageContainer>
       <div>
         <TagTitle>Последние новости</TagTitle>
-        <h2>{data.title}</h2>
+        <h2>
+          <Link to={`/news/${data.slug}`}>{data.title}</Link>
+        </h2>
         <p>{data.excerpt}</p>
         <Link to={`/news/${data.slug}`}>Читать подробнее &rarr;</Link>
       </div>

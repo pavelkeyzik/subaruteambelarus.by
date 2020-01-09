@@ -10,12 +10,16 @@ const Section = styled.section`
   align-items: center;
   background: ${props => props.theme.colors.foreground};
   padding: 40px 20px;
-  color: #fff;
   text-align: center;
+  background: #f7f7f7;
+
+  p {
+    color: #666;
+  }
 `;
 
 const SectionTitle = styled.h2`
-  color: #fff;
+  color: #333;
   margin-bottom: 0;
 `;
 
@@ -26,7 +30,7 @@ const SocialLinks = styled.div`
   margin-top: 20px;
 
   & a {
-    fill: #fff;
+    fill: #444;
   }
 `;
 
