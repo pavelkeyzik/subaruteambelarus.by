@@ -14,9 +14,13 @@ const LayoutContainer = styled.div`
 
 const LayoutContainerInner = styled.main`
   background: #fff;
-  margin: 0 40px;
+  margin: 0 16px;
   padding-bottom: 60px;
   border: 1px solid ${props => props.theme.colors.headerBorderColor};
+
+  @media screen and (min-width: ${layoutConfig.small.width}) {
+    margin: 0 40px;
+  }
 `;
 
 function ArticleLayout({ children }: IArticleLayout) {

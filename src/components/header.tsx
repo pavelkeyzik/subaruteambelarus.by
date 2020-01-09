@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import Logo from '../../static/assets/logo.svg';
 import styled from '@emotion/styled';
 import { IEmotionStyledTheme } from '../types/theme';
+import { layoutConfig } from './layouts/config';
 
 const AppLogo = styled(Logo)<IEmotionStyledTheme>`
   fill: ${props => props.theme.colors.appLogoForeground};
@@ -17,7 +18,11 @@ const TopMenu = styled.div`
   min-height: 70px;
   margin: 0 auto;
   max-width: 1760px;
-  padding: 0 40px;
+  padding: 0 16px;
+
+  @media screen and (min-width: ${layoutConfig.small.width}) {
+    padding: 0 40px;
+  }
 `;
 
 const NavContainer = styled.nav`

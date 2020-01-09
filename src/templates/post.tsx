@@ -6,6 +6,7 @@ import Helmet from 'react-helmet';
 import ArticleLayout from '../components/layouts/article';
 import useSiteMetadata from '../hooks/use-sitemetadata';
 import styled from '@emotion/styled';
+import { layoutConfig } from '../components/layouts/config';
 
 export const query = graphql`
   query PostData($slug: String!) {
@@ -32,7 +33,11 @@ export const query = graphql`
 const ArticleContent = styled.div`
   max-width: 1080px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 20px;
+
+  @media screen and (min-width: ${layoutConfig.small.width}) {
+    padding: 0 40px;
+  }
 `;
 
 const ImageContainer = styled.div`
@@ -46,7 +51,8 @@ const ImageContent = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 0 20%;
+  padding: 0 5%;
+  font-size: 0.6rem;
   color: #fff;
   top: 0;
   left: 0;
@@ -54,6 +60,11 @@ const ImageContent = styled.div`
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   overflow: hidden;
+
+  @media screen and (min-width: ${layoutConfig.small.width}) {
+    padding: 0 10%;
+    font-size: 1rem;
+  }
 
   h1 {
     color: #fff;
