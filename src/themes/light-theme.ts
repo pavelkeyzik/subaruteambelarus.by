@@ -2,14 +2,14 @@ import { IEmotionTheme } from '../types/theme';
 
 export const lightTheme: IEmotionTheme = {
   colors: {
-    primary: '#22b2ea',
+    primary: '#006ad1',
     foreground: '#333',
     headersColor: '#111',
     bodyBackground: '#fefefe',
     bodyForeground: '#333',
     appLogoForeground: '#333',
     headerBorderColor: '#eee',
-    linkColor: '#000',
+    linkColor: '#006ad1',
     blockquoteBackground: '#eee',
     blockquoteForeground: '#555',
     blockquoteBorderColor: '#888',

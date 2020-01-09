@@ -12,8 +12,8 @@ function usePosts(): IPost[] {
             author
             image {
               sharp: childImageSharp {
-                fluid(maxWidth: 1600) {
-                  ...GatsbyImageSharpFluid_withWebp
+                fluid(maxWidth: 920) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             }

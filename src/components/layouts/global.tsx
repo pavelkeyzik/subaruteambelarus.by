@@ -57,6 +57,20 @@ function getGlobalStyles(theme: IEmotionTheme) {
         }
       }
     }
+
+    p {
+      color: #555;
+    }
+
+    figure {
+      margin: 40px 0;
+      text-align: center;
+
+      figcaption {
+        font-size: 0.8rem;
+        color: #555;
+      }
+    }
   `;
 }
 

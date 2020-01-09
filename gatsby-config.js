@@ -43,7 +43,14 @@ module.exports = {
         defaultLayouts: {
           default: require.resolve('./src/components/layouts/article.tsx'),
         },
-        gatsbyRemarkPlugins: ['gatsby-remark-images'],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1280,
+            },
+          },
+        ],
         plugins: ['gatsby-remark-images'],
       },
     },
