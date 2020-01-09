@@ -7,24 +7,24 @@ interface IArticleLayout {
   children?: React.ReactNode;
 }
 
-const LayoutContainer = styled.main`
-  max-width: 1080px;
-  margin: 110px auto 0;
-  padding: 0 ${layoutConfig.small.padding};
+const LayoutContainer = styled.div`
+  max-width: 1760px;
+  margin: 60px auto 0;
+`;
 
-  @media screen and (min-width: ${layoutConfig.medium.width}) {
-    padding: 0 ${layoutConfig.medium.padding};
-  }
-
-  @media screen and (min-width: ${layoutConfig.large.width}) {
-    padding: 0 ${layoutConfig.large.padding};
-  }
+const LayoutContainerInner = styled.main`
+  background: #fff;
+  margin: 0 40px;
+  padding-bottom: 60px;
+  border: 1px solid ${props => props.theme.colors.headerBorderColor};
 `;
 
 function ArticleLayout({ children }: IArticleLayout) {
   return (
     <GlobalLayout>
-      <LayoutContainer>{children}</LayoutContainer>
+      <LayoutContainer>
+        <LayoutContainerInner>{children}</LayoutContainerInner>
+      </LayoutContainer>
     </GlobalLayout>
   );
 }

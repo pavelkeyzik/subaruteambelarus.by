@@ -10,7 +10,7 @@ const Section = styled.section`
   display: grid;
   align-items: flex-start;
   grid-gap: 30px;
-  padding: 110px 0 80px;
+  padding: 60px 0;
 
   @media screen and (min-width: ${layoutConfig.small.width}) {
     grid-template-columns: 6fr 6fr;

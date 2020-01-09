@@ -3,7 +3,6 @@ import { Link } from 'gatsby';
 import Logo from '../../static/assets/logo.svg';
 import styled from '@emotion/styled';
 import { IEmotionStyledTheme } from '../types/theme';
-import { layoutConfig } from './layouts/config';
 
 const AppLogo = styled(Logo)<IEmotionStyledTheme>`
   fill: ${props => props.theme.colors.appLogoForeground};
@@ -18,15 +17,7 @@ const TopMenu = styled.div`
   min-height: 70px;
   margin: 0 auto;
   max-width: 1760px;
-  padding: 0 ${layoutConfig.small.padding};
-
-  @media screen and (min-width: ${layoutConfig.medium.width}) {
-    padding: 0 ${layoutConfig.medium.padding};
-  }
-
-  @media screen and (min-width: ${layoutConfig.large.width}) {
-    padding: 0 ${layoutConfig.large.padding};
-  }
+  padding: 0 40px;
 `;
 
 const NavContainer = styled.nav`
@@ -40,7 +31,7 @@ const TopMenuContainer = styled.div<IEmotionStyledTheme>`
   left: 0;
   width: 100%;
   z-index: 99;
-  background: ${props => props.theme.colors.bodyBackground};
+  background: #fff;
   border-bottom: 1px solid ${props => props.theme.colors.headerBorderColor};
 `;
 
@@ -64,23 +55,31 @@ const LogoLink = styled(Link)<IEmotionStyledTheme>`
   color: ${props => props.theme.colors.foreground};
 `;
 
+const MenuSpace = styled.div`
+  display: flex;
+  height: 70px;
+`;
+
 function Header() {
   return (
-    <TopMenuContainer>
-      <TopMenu>
-        <LogoLink to="/">
-          <AppLogo />
-        </LogoLink>
-        <NavContainer>
-          <NavLink to="/" activeClassName="current-page">
-            Главная
-          </NavLink>
-          <NavLink to="/news" activeClassName="current-page">
-            Новости
-          </NavLink>
-        </NavContainer>
-      </TopMenu>
-    </TopMenuContainer>
+    <React.Fragment>
+      <TopMenuContainer>
+        <TopMenu>
+          <LogoLink to="/">
+            <AppLogo />
+          </LogoLink>
+          <NavContainer>
+            <NavLink to="/" activeClassName="current-page">
+              Главная
+            </NavLink>
+            <NavLink to="/news" activeClassName="current-page">
+              Новости
+            </NavLink>
+          </NavContainer>
+        </TopMenu>
+      </TopMenuContainer>
+      <MenuSpace />
+    </React.Fragment>
   );
 }
 

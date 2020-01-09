@@ -11,7 +11,7 @@ const Section = styled.section`
   background: ${props => props.theme.colors.foreground};
   padding: 40px 20px;
   text-align: center;
-  background: #f7f7f7;
+  background: #fefefe;
 
   p {
     color: #666;
