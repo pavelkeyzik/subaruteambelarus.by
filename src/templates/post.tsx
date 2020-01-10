@@ -11,6 +11,7 @@ import { layoutConfig } from '../components/layouts/config';
 export const query = graphql`
   query PostData($slug: String!) {
     mdx(frontmatter: { slug: { eq: $slug } }) {
+      excerpt
       frontmatter {
         title
         author
@@ -80,6 +81,12 @@ function PostTemplate({ data: { mdx: post } }) {
         <title>
           {siteName} - {post.frontmatter.title}
         </title>
+        <meta property="og:title" content={post.frontmatter.title} />
+        <meta property="og:description" content={post.excerpt} />
+        <meta
+          property="og:image"
+          content={post.frontmatter.image.sharp.fluid.src}
+        />
       </Helmet>
       <ArticleLayout>
         <ImageContainer>
