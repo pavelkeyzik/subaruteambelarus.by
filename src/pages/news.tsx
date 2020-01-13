@@ -1,5 +1,5 @@
 import React from 'react';
-import PostPreview from '../components/post-preview-old';
+import PostPreview from '../components/post-preview';
 import usePosts from '../hooks/use-posts';
 import styled from '@emotion/styled';
 import Helmet from 'react-helmet';
