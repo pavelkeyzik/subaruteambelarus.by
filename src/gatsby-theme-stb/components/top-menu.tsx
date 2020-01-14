@@ -2,10 +2,13 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { layoutConfig } from '../../components/layouts/config';
 import { IEmotionStyledTheme } from '../../types/theme';
+import { useMenuVisibility } from '../hooks/use-menu-visibility';
 
 const MENU_HEIGHT = 70;
 
 const Container = styled.div<IEmotionStyledTheme>`
+  opacity: 1;
+  transition: visibility 0s linear 0s, opacity 300ms;
   position: fixed;
   top: 0;
   left: 0;
@@ -13,6 +16,21 @@ const Container = styled.div<IEmotionStyledTheme>`
   z-index: 99;
   background: ${props => props.theme.colors.headerBackground};
   border-bottom: 1px solid ${props => props.theme.colors.headerBorderColor};
+
+  ${({ isVisible }) =>
+    isVisible
+      ? `
+        visibility: visible;
+        top: 0px;
+        opacity: 1;
+        transition: visibility 0s linear 0s, opacity 300ms, top 100ms linear;
+      `
+      : `
+        visibility: hidden;
+        top: -${MENU_HEIGHT}px;
+        opacity: 0;
+        transition: visibility 0s linear 300ms, opacity 300ms, top 100ms linear;
+      `}
 `;
 
 const Root = styled.div`
@@ -35,9 +53,11 @@ const MenuSpace = styled.div`
 `;
 
 export function TopMenu({ children }) {
+  const [isVisible] = useMenuVisibility(MENU_HEIGHT);
+
   return (
     <React.Fragment>
-      <Container>
+      <Container isVisible={isVisible}>
         <Root>{children}</Root>
       </Container>
       <MenuSpace />
