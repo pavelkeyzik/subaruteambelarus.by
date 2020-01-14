@@ -5,6 +5,7 @@ export const lightTheme: IEmotionTheme = {
     primary: '#006ad1',
     foreground: '#333',
     headersColor: '#111',
+    headerBackground: '#fff',
     bodyBackground: '#f6f7fa',
     bodyForeground: '#333',
     appLogoForeground: '#333',
