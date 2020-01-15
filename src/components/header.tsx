@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'gatsby';
-import Logo from '../../static/assets/logo.svg';
 import styled from '@emotion/styled';
+import Logo from '../../static/assets/logo.svg';
 import { IEmotionStyledTheme } from '../types/theme';
-import { layoutConfig } from './layouts/config';
 import { TopMenu } from '../gatsby-theme-stb/components/top-menu';
+import { NavigationMenuMobile } from '../gatsby-theme-stb/components/navigation-menu-mobile';
+import { NavigationMenuDesktop } from '../gatsby-theme-stb/components/navigation-menu-desktop';
+import { DesktopOnly } from '../gatsby-theme-stb/components/desktop-only';
+import { MobileOnly } from '../gatsby-theme-stb/components/mobile-only';
 
 const AppLogo = styled(Logo)<IEmotionStyledTheme>`
   fill: ${props => props.theme.colors.appLogoForeground};
@@ -12,49 +15,39 @@ const AppLogo = styled(Logo)<IEmotionStyledTheme>`
   height: auto;
 `;
 
-const NavContainer = styled.nav`
-  display: flex;
-  align-items: center;
-`;
-
-const NavLink = styled(Link)<IEmotionStyledTheme>`
-  display: flex;
-  align-items: center;
-  color: ${props => props.theme.colors.foreground};
-  text-decoration: none;
-  margin: 0 0.5rem;
-  padding: 0.2rem 0;
-  border-bottom: 2px solid transparent;
-
-  &.current-page {
-    border-bottom: 2px solid ${props => props.theme.colors.primary};
-  }
-
-  @media screen and (min-width: ${layoutConfig.small.width}) {
-    margin: 0 1rem;
-  }
-`;
-
 const LogoLink = styled(Link)<IEmotionStyledTheme>`
   display: flex;
   align-items: center;
-  color: ${props => props.theme.colors.foreground};
 `;
 
 function Header() {
+  const [isNavigationOpened, setIsNavigationOpened] = useState(false);
+
+  function handleOpenMenu() {
+    setIsNavigationOpened(true);
+  }
+
+  function handleCloseMenu() {
+    setIsNavigationOpened(false);
+  }
+
   return (
-    <TopMenu>
+    <TopMenu isNavigationOpened={isNavigationOpened}>
       <LogoLink to="/">
         <AppLogo />
       </LogoLink>
-      <NavContainer>
-        <NavLink to="/" activeClassName="current-page">
-          Главная
-        </NavLink>
-        <NavLink to="/news" activeClassName="current-page">
-          Новости
-        </NavLink>
-      </NavContainer>
+      <React.Fragment>
+        <MobileOnly>
+          <NavigationMenuMobile
+            isOpened={isNavigationOpened}
+            onOpen={handleOpenMenu}
+            onClose={handleCloseMenu}
+          />
+        </MobileOnly>
+        <DesktopOnly>
+          <NavigationMenuDesktop />
+        </DesktopOnly>
+      </React.Fragment>
     </TopMenu>
   );
 }

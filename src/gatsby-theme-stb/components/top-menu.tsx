@@ -52,12 +52,17 @@ const MenuSpace = styled.div`
   height: ${MENU_HEIGHT}px;
 `;
 
-export function TopMenu({ children }) {
+interface ITopMenu {
+  isNavigationOpened: boolean;
+  children?: React.ReactNode;
+}
+
+export function TopMenu({ isNavigationOpened, children }: ITopMenu) {
   const [isVisible] = useMenuVisibility(MENU_HEIGHT);
 
   return (
     <React.Fragment>
-      <Container isVisible={isVisible}>
+      <Container isVisible={isNavigationOpened || isVisible}>
         <Root>{children}</Root>
       </Container>
       <MenuSpace />
