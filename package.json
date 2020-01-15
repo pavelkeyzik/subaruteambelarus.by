@@ -37,7 +37,8 @@
     "react": "16.12.0",
     "react-dom": "16.12.0",
     "react-helmet": "5.2.1",
-    "throttle-debounce": "2.1.0"
+    "throttle-debounce": "2.1.0",
+    "use-media-query-hook": "0.3.0"
   },
   "devDependencies": {
     "@types/node": "12.12.14",
