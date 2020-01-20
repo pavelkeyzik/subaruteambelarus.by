@@ -28,6 +28,10 @@ const NavContainer = styled.nav<IEmotionStyledTheme>`
   }
 `;
 
+const ToggleButtonContainer = styled.div`
+  margin-left: 20px;
+`;
+
 export function NavigationMenuDesktop() {
   return (
     <NavContainer>
@@ -37,7 +41,9 @@ export function NavigationMenuDesktop() {
       <Link to="/news" activeClassName="current-page">
         Новости
       </Link>
-      <ToggleThemeButton />
+      <ToggleButtonContainer>
+        <ToggleThemeButton />
+      </ToggleButtonContainer>
     </NavContainer>
   );
 }
