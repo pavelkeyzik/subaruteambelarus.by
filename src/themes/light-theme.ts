@@ -1,8 +1,10 @@
 import { IEmotionTheme } from '../types/theme';
 
+const ACCENT = '#006ad1';
+
 export const lightTheme: IEmotionTheme = {
   colors: {
-    primary: '#006ad1',
+    primary: ACCENT,
     foreground: '#333',
     headersColor: '#111',
     headerBackground: '#fff',
@@ -10,7 +12,7 @@ export const lightTheme: IEmotionTheme = {
     bodyForeground: '#333',
     appLogoForeground: '#333',
     headerBorderColor: '#eee',
-    linkColor: '#006ad1',
+    linkColor: ACCENT,
     blockquoteBackground: '#eee',
     blockquoteForeground: '#555',
     blockquoteBorderColor: '#888',
@@ -18,5 +20,6 @@ export const lightTheme: IEmotionTheme = {
     footerBorderColor: '#ccc',
     footerCopyrightColor: '#888',
     socialsColor: '#333',
+    toggleThemeIcon: '#333',
   },
 };
