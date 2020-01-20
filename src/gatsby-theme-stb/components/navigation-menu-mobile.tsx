@@ -5,6 +5,7 @@ import MenuIcon from '../../../static/assets/menu.svg';
 import CloseMenuIcon from '../../../static/assets/x.svg';
 import { IconButton } from './icon-button';
 import { IEmotionStyledTheme } from '../../types/theme';
+import { ToggleThemeButton } from './toggle-theme-button';
 
 const MobileNavContainer = styled.nav<IEmotionStyledTheme>`
   display: flex;
@@ -50,6 +51,13 @@ const CloseMenuIconThemed = styled(CloseMenuIcon)<IEmotionStyledTheme>`
   color: ${props => props.theme.colors.mobileMenuIconColor};
 `;
 
+const ToggleThemeButtonContaner = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 30px 40px;
+`;
+
 export function NavigationMenuMobile({ onOpen, onClose, isOpened }) {
   return (
     <div>
@@ -71,6 +79,9 @@ export function NavigationMenuMobile({ onOpen, onClose, isOpened }) {
               Новости
             </Link>
           </MobileNavContainer>
+          <ToggleThemeButtonContaner>
+            <ToggleThemeButton withText />
+          </ToggleThemeButtonContaner>
         </MenuContainer>
       )}
     </div>
