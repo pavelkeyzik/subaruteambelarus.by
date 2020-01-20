@@ -3,8 +3,9 @@ import { ThemeContext } from '../../contexts/theme-context';
 import Moon from '../../../static/assets/moon.svg';
 import Sun from '../../../static/assets/sun.svg';
 import styled from '@emotion/styled';
+import { IEmotionStyledTheme } from '../../types/theme';
 
-const Button = styled.button`
+const Button = styled.button<IEmotionStyledTheme>`
   border: none;
   background: none;
   display: flex;

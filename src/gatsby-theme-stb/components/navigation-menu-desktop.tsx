@@ -3,8 +3,9 @@ import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import { layoutConfig } from '../../components/layouts/config';
 import { ToggleThemeButton } from './toggle-theme-button';
+import { IEmotionStyledTheme } from '../../types/theme';
 
-const NavContainer = styled.nav`
+const NavContainer = styled.nav<IEmotionStyledTheme>`
   display: flex;
   align-items: center;
 

@@ -4,6 +4,7 @@ import { layoutConfig } from './layouts/config';
 import Instagram from '../../static/assets/instagram.svg';
 import Vk from '../../static/assets/vk.svg';
 import Youtube from '../../static/assets/youtube.svg';
+import { IEmotionStyledTheme } from '../types/theme';
 
 const FooterContainer = styled.footer`
   max-width: 1760px;
@@ -11,7 +12,7 @@ const FooterContainer = styled.footer`
   margin: 40px auto 0;
 `;
 
-const FooterContent = styled.div`
+const FooterContent = styled.div<IEmotionStyledTheme>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,7 +38,7 @@ const FooterContent = styled.div`
   }
 `;
 
-const SocialLinksMenu = styled.nav`
+const SocialLinksMenu = styled.nav<IEmotionStyledTheme>`
   display: flex;
 
   a {
