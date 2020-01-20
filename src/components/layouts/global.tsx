@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import Header from '../header';
 import { Global } from '@emotion/core';
 import { ThemeProvider } from 'emotion-theming';
@@ -7,6 +7,11 @@ import { IEmotionTheme } from '../../types/theme';
 import { lightTheme } from '../../themes/light-theme';
 import Footer from '../footer';
 import useSiteMetadata from '../../hooks/use-sitemetadata';
+import { darkTheme } from '../../themes/dark-theme';
+import {
+  ThemeContextProvider,
+  ThemeContext,
+} from '../../contexts/theme-context';
 
 function getGlobalStyles(theme: IEmotionTheme) {
   return `
@@ -80,9 +85,12 @@ interface ILayout {
 
 function Layout({ children }: ILayout) {
   const { siteName, title, description } = useSiteMetadata();
+  const theme = useContext(ThemeContext);
 
   return (
-    <ThemeProvider theme={lightTheme}>
+    <ThemeProvider
+      theme={theme.currentTheme === 'light' ? lightTheme : darkTheme}
+    >
       <Global styles={getGlobalStyles} />
       <Helmet>
         <html lang="ru" />
@@ -98,4 +106,12 @@ function Layout({ children }: ILayout) {
   );
 }
 
-export default Layout;
+const GlobalLayout = ({ children }) => {
+  return (
+    <ThemeContextProvider>
+      <Layout>{children}</Layout>
+    </ThemeContextProvider>
+  );
+};
+
+export default GlobalLayout;

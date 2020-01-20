@@ -28,21 +28,19 @@ function NewsPage() {
   const { siteName } = useSiteMetadata();
 
   return (
-    <React.Fragment>
-      <LayoutWidth>
-        <Helmet>
-          <title>
-            {siteName} - {pageTitle}
-          </title>
-        </Helmet>
-        <h2>{pageTitle}</h2>
-        <NewsGrid>
-          {posts.map(post => (
-            <PostPreview key={post.slug} post={post} />
-          ))}
-        </NewsGrid>
-      </LayoutWidth>
-    </React.Fragment>
+    <LayoutWidth>
+      <Helmet>
+        <title>
+          {siteName} - {pageTitle}
+        </title>
+      </Helmet>
+      <h2>{pageTitle}</h2>
+      <NewsGrid>
+        {posts.map(post => (
+          <PostPreview key={post.slug} post={post} />
+        ))}
+      </NewsGrid>
+    </LayoutWidth>
   );
 }
 
