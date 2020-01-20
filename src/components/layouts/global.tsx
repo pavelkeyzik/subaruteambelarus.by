@@ -4,14 +4,13 @@ import { Global } from '@emotion/core';
 import { ThemeProvider } from 'emotion-theming';
 import Helmet from 'react-helmet';
 import { IEmotionTheme } from '../../types/theme';
-import { lightTheme } from '../../themes/light-theme';
 import Footer from '../footer';
 import useSiteMetadata from '../../hooks/use-sitemetadata';
-import { darkTheme } from '../../themes/dark-theme';
 import {
   ThemeContextProvider,
   ThemeContext,
 } from '../../contexts/theme-context';
+import { getTheme } from '../../themes/get-theme';
 
 function getGlobalStyles(theme: IEmotionTheme) {
   return `
@@ -45,6 +44,10 @@ function getGlobalStyles(theme: IEmotionTheme) {
       color: ${theme.colors.linkColor};
     }
 
+    p {
+      color: ${theme.colors.foreground};
+    }
+
     blockquote {
       display: flex;
       flex-direction: column;
@@ -52,19 +55,15 @@ function getGlobalStyles(theme: IEmotionTheme) {
       padding: 16px 20px;
       border-left: 4px solid ${theme.colors.blockquoteBorderColor};
       background: ${theme.colors.blockquoteBackground};
-      color: ${theme.colors.blockquoteForeground};
 
       p {
         margin: 0;
+        color: ${theme.colors.blockquoteForeground};
 
         &:not(:last-child) {
           margin-bottom: 0.3rem;
         }
       }
-    }
-
-    p {
-      color: #555;
     }
 
     figure {
@@ -73,7 +72,7 @@ function getGlobalStyles(theme: IEmotionTheme) {
 
       figcaption {
         font-size: 0.8rem;
-        color: #555;
+        color: ${theme.colors.figureCaptionForeground};
       }
     }
   `;
@@ -86,11 +85,10 @@ interface ILayout {
 function Layout({ children }: ILayout) {
   const { siteName, title, description } = useSiteMetadata();
   const theme = useContext(ThemeContext);
+  const themeSchema = getTheme(theme.currentTheme);
 
   return (
-    <ThemeProvider
-      theme={theme.currentTheme === 'light' ? lightTheme : darkTheme}
-    >
+    <ThemeProvider theme={themeSchema}>
       <Global styles={getGlobalStyles} />
       <Helmet>
         <html lang="ru" />

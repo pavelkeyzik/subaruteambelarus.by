@@ -6,7 +6,11 @@ import { useMenuVisibility } from '../hooks/use-menu-visibility';
 
 const MENU_HEIGHT = 70;
 
-const Container = styled.div<IEmotionStyledTheme>`
+interface IContainer extends IEmotionStyledTheme {
+  isVisible: boolean;
+}
+
+const Container = styled.div<IContainer>`
   opacity: 1;
   transition: visibility 0s linear 0s, opacity 300ms;
   position: fixed;

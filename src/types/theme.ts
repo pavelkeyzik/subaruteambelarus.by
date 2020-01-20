@@ -20,6 +20,16 @@ export interface IEmotionTheme {
     footerCopyrightColor: string;
     socialsColor: string;
     toggleThemeIcon: string;
+    tagForeground: string;
+    imageBackground: string;
+    stayUpdatedBackground: string;
+    stayUpdatedSocialLinksFill: string;
+    contentLayoutBackground: string;
+    figureCaptionForeground: string;
+    articleBigTitleForeground: string;
+    mobileMenuIconColor: string;
+    mobileMenuLinksColor: string;
+    mobileMenuBackground: string;
   };
 }
 

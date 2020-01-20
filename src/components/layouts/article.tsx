@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import GlobalLayout from './global';
 import { layoutConfig } from './config';
+import { IEmotionStyledTheme } from '../../types/theme';
 
 interface IArticleLayout {
   children?: React.ReactNode;
@@ -16,8 +17,8 @@ const LayoutContainer = styled.div`
   }
 `;
 
-const LayoutContainerInner = styled.main`
-  background: #fff;
+const LayoutContainerInner = styled.main<IEmotionStyledTheme>`
+  background: ${props => props.theme.colors.contentLayoutBackground};
   margin: 0 16px;
   padding-bottom: 60px;
   border: 1px solid ${props => props.theme.colors.headerBorderColor};
