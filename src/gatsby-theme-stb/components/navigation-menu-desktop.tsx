@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import { layoutConfig } from '../../components/layouts/config';
+import { ToggleThemeButton } from './toggle-theme-button';
 
 const NavContainer = styled.nav`
   display: flex;
@@ -35,6 +36,7 @@ export function NavigationMenuDesktop() {
       <Link to="/news" activeClassName="current-page">
         Новости
       </Link>
+      <ToggleThemeButton />
     </NavContainer>
   );
 }

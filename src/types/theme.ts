@@ -19,6 +19,7 @@ export interface IEmotionTheme {
     footerBorderColor: string;
     footerCopyrightColor: string;
     socialsColor: string;
+    toggleThemeIcon: string;
   };
 }
 
