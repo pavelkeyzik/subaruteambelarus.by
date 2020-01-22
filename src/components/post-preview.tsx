@@ -1,11 +1,10 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';
-import { IEmotionStyledTheme } from '../types/theme';
 import { IPost } from '../types/global';
 import Image from 'gatsby-image';
 
-const Article = styled.article<IEmotionStyledTheme>``;
+const Article = styled.article``;
 
 interface IPostPreview {
   post: IPost;

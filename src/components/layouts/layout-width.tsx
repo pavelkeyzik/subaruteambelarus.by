@@ -2,7 +2,6 @@ import React from 'react';
 import styled from '@emotion/styled';
 import GlobalLayout from './global';
 import { layoutConfig } from './config';
-import { IEmotionStyledTheme } from '../../types/theme';
 
 const Root = styled.div`
   max-width: 1760px;
@@ -13,11 +12,11 @@ const Root = styled.div`
   }
 `;
 
-const Inner = styled.div<IEmotionStyledTheme>`
+const Inner = styled.div`
   margin: 30px 16px 0;
   padding: 0 20px;
-  background: ${props => props.theme.colors.contentLayoutBackground};
-  border: 1px solid ${props => props.theme.colors.headerBorderColor};
+  background: var(--contentLayoutBackground);
+  border: 1px solid var(--headerBorderColor);
 
   @media screen and (min-width: ${layoutConfig.small.width}) {
     margin: 60px 40px 0;

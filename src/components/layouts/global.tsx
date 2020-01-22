@@ -1,18 +1,28 @@
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 import Header from '../header';
 import { Global } from '@emotion/core';
-import { ThemeProvider } from 'emotion-theming';
 import Helmet from 'react-helmet';
-import { IEmotionTheme } from '../../types/theme';
 import Footer from '../footer';
 import useSiteMetadata from '../../hooks/use-sitemetadata';
-import {
-  ThemeContextProvider,
-  ThemeContext,
-} from '../../contexts/theme-context';
+import { ThemeContextProvider } from '../../contexts/theme-context';
 import { getTheme } from '../../themes/get-theme';
+import { availableThemes } from '../../constants';
 
-function getGlobalStyles(theme: IEmotionTheme) {
+function getThemesForBody() {
+  const themes = Object.keys(availableThemes);
+
+  return themes
+    .map(theme => {
+      return `
+        body.${theme} {
+          ${getTheme(theme)}
+        }
+      `;
+    })
+    .join('\n');
+}
+
+function getGlobalStyles() {
   return `
     * {
       box-sizing: border-box;
@@ -22,8 +32,8 @@ function getGlobalStyles(theme: IEmotionTheme) {
     body {
       margin: 0;
       padding: 0;
-      background: ${theme.colors.bodyBackground};
-      color: ${theme.colors.bodyForeground};
+      background: var(--bodyBackground);
+      color: var(--bodyForeground);
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
         Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
         sans-serif;
@@ -31,21 +41,23 @@ function getGlobalStyles(theme: IEmotionTheme) {
       line-height: 1.4;
     }
 
+    ${getThemesForBody()}
+
     h1,
     h2,
     h3,
     h4,
     h5,
     h6 {
-      color: ${theme.colors.headersColor};
+      color: var(--headersColor);
     }
 
     a {
-      color: ${theme.colors.linkColor};
+      color: var(--linkColor);
     }
 
     p {
-      color: ${theme.colors.foreground};
+      color: var(--foreground);
     }
 
     blockquote {
@@ -53,12 +65,12 @@ function getGlobalStyles(theme: IEmotionTheme) {
       flex-direction: column;
       margin: 30px 0;
       padding: 16px 20px;
-      border-left: 4px solid ${theme.colors.blockquoteBorderColor};
-      background: ${theme.colors.blockquoteBackground};
+      border-left: 4px solid var(--blockquoteBorderColor);
+      background: var(--blockquoteBackground);
 
       p {
         margin: 0;
-        color: ${theme.colors.blockquoteForeground};
+        color: var(--blockquoteForeground);
 
         &:not(:last-child) {
           margin-bottom: 0.3rem;
@@ -72,7 +84,7 @@ function getGlobalStyles(theme: IEmotionTheme) {
 
       figcaption {
         font-size: 0.8rem;
-        color: ${theme.colors.figureCaptionForeground};
+        color: var(--figureCaptionForeground);
       }
     }
   `;
@@ -84,11 +96,9 @@ interface ILayout {
 
 function Layout({ children }: ILayout) {
   const { siteName, title, description } = useSiteMetadata();
-  const theme = useContext(ThemeContext);
-  const themeSchema = getTheme(theme.currentTheme);
 
   return (
-    <ThemeProvider theme={themeSchema}>
+    <React.Fragment>
       <Global styles={getGlobalStyles} />
       <Helmet>
         <html lang="ru" />
@@ -100,7 +110,7 @@ function Layout({ children }: ILayout) {
       <Header />
       {children}
       <Footer />
-    </ThemeProvider>
+    </React.Fragment>
   );
 }
 

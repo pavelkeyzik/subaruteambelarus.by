@@ -9,3 +9,9 @@ export interface IPost {
     sharp: GatsbyImageProps;
   };
 }
+
+export type MyWindow = typeof window & {
+  __theme: string;
+  __setPreferredTheme: (theme: string) => void;
+  __onThemeChange: () => void;
+};

@@ -7,7 +7,6 @@ import ArticleLayout from '../components/layouts/article';
 import useSiteMetadata from '../hooks/use-sitemetadata';
 import styled from '@emotion/styled';
 import { layoutConfig } from '../components/layouts/config';
-import { IEmotionStyledTheme } from '../types/theme';
 
 export const query = graphql`
   query PostData($slug: String!) {
@@ -47,7 +46,7 @@ const ImageContainer = styled.div`
   margin-bottom: 40px;
 `;
 
-const ImageContent = styled.div<IEmotionStyledTheme>`
+const ImageContent = styled.div`
   position: absolute;
   display: flex;
   justify-content: center;
@@ -68,7 +67,7 @@ const ImageContent = styled.div<IEmotionStyledTheme>`
   }
 
   h1 {
-    color: ${props => props.theme.colors.articleBigTitleForeground};
+    color: var(--articleBigTitleForeground);
   }
 `;
 
