@@ -4,7 +4,6 @@ import { layoutConfig } from './layouts/config';
 import Instagram from '../../static/assets/instagram.svg';
 import Vk from '../../static/assets/vk.svg';
 import Youtube from '../../static/assets/youtube.svg';
-import { IEmotionStyledTheme } from '../types/theme';
 
 const FooterContainer = styled.footer`
   max-width: 1760px;
@@ -12,15 +11,15 @@ const FooterContainer = styled.footer`
   margin: 40px auto 0;
 `;
 
-const FooterContent = styled.div<IEmotionStyledTheme>`
+const FooterContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-top: 1px solid ${props => props.theme.colors.footerBorderColor};
+  border-top: 1px solid var(--footerBorderColor);
   padding: 30px 0 40px;
 
   span {
-    color: ${props => props.theme.colors.footerCopyrightColor};
+    color: var(--footerCopyrightColor);
     font-size: 0.75rem;
     margin-bottom: 20px;
     text-align: center;
@@ -38,14 +37,14 @@ const FooterContent = styled.div<IEmotionStyledTheme>`
   }
 `;
 
-const SocialLinksMenu = styled.nav<IEmotionStyledTheme>`
+const SocialLinksMenu = styled.nav`
   display: flex;
 
   a {
     margin: 0 0.7rem;
 
     svg {
-      fill: ${props => props.theme.colors.socialsColor};
+      fill: var(--socialsColor);
     }
 
     :last-child {

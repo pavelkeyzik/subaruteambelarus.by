@@ -5,7 +5,6 @@ import Image from 'gatsby-image';
 import useLastPost from '../hooks/use-last-post';
 import { css } from '@emotion/core';
 import { layoutConfig } from './layouts/config';
-import { IEmotionStyledTheme } from '../types/theme';
 
 const Section = styled.section`
   display: grid;
@@ -20,16 +19,16 @@ const Section = styled.section`
   }
 `;
 
-const ImageContainer = styled.div<IEmotionStyledTheme>`
+const ImageContainer = styled.div`
   display: flex;
   justify-content: flex-start;
-  background: ${props => props.theme.colors.imageBackground};
+  background: var(--imageBackground);
 `;
 
-const TagTitle = styled.span<IEmotionStyledTheme>`
+const TagTitle = styled.span`
   text-transform: uppercase;
   font-size: 0.7rem;
-  color: ${props => props.theme.colors.tagForeground};
+  color: var(--tagForeground);
 `;
 
 function LastArticle() {

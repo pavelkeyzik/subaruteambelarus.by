@@ -2,20 +2,19 @@ import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import Logo from '../../static/assets/logo.svg';
-import { IEmotionStyledTheme } from '../types/theme';
 import { TopMenu } from '../gatsby-theme-stb/components/top-menu';
 import { NavigationMenuMobile } from '../gatsby-theme-stb/components/navigation-menu-mobile';
 import { NavigationMenuDesktop } from '../gatsby-theme-stb/components/navigation-menu-desktop';
 import { DesktopOnly } from '../gatsby-theme-stb/components/desktop-only';
 import { MobileOnly } from '../gatsby-theme-stb/components/mobile-only';
 
-const AppLogo = styled(Logo)<IEmotionStyledTheme>`
-  fill: ${props => props.theme.colors.appLogoForeground};
+const AppLogo = styled(Logo)`
+  fill: var(--appLogoForeground);
   width: 120px;
   height: auto;
 `;
 
-const LogoLink = styled(Link)<IEmotionStyledTheme>`
+const LogoLink = styled(Link)`
   display: flex;
   align-items: center;
 `;

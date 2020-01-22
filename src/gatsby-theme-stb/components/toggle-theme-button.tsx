@@ -3,15 +3,13 @@ import { ThemeContext } from '../../contexts/theme-context';
 import Moon from '../../../static/assets/moon.svg';
 import Sun from '../../../static/assets/sun.svg';
 import styled from '@emotion/styled';
-import { IEmotionStyledTheme } from '../../types/theme';
+import { availableThemes } from '../../constants';
 
 interface IToggleThemeButton {
   withText?: boolean;
 }
 
-interface IButton extends IToggleThemeButton, IEmotionStyledTheme {}
-
-const Button = styled.button<IButton>`
+const Button = styled.button<IToggleThemeButton>`
   border: none;
   background: none;
   display: flex;
@@ -24,7 +22,7 @@ const Button = styled.button<IButton>`
   cursor: pointer;
   opacity: 0.7;
   transition: opacity 0.3s;
-  color: ${props => props.theme.colors.toggleThemeIcon};
+  color: var(--toggleThemeIcon);
 
   :hover {
     opacity: 1;
@@ -38,7 +36,7 @@ const Button = styled.button<IButton>`
 
 export function ToggleThemeButton({ withText }: IToggleThemeButton) {
   const theme = useContext(ThemeContext);
-  const isLightTheme = theme.currentTheme === 'light';
+  const isLightTheme = theme.currentTheme === availableThemes.light;
 
   return (
     <Button onClick={theme.toggleTheme}>

@@ -1,12 +1,11 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { layoutConfig } from '../../components/layouts/config';
-import { IEmotionStyledTheme } from '../../types/theme';
 import { useMenuVisibility } from '../hooks/use-menu-visibility';
 
 const MENU_HEIGHT = 70;
 
-interface IContainer extends IEmotionStyledTheme {
+interface IContainer {
   isVisible: boolean;
 }
 
@@ -18,8 +17,8 @@ const Container = styled.div<IContainer>`
   left: 0;
   width: 100%;
   z-index: 99;
-  background: ${props => props.theme.colors.headerBackground};
-  border-bottom: 1px solid ${props => props.theme.colors.headerBorderColor};
+  background: var(--headerBackground);
+  border-bottom: 1px solid var(--headerBorderColor);
 
   ${({ isVisible }) =>
     isVisible

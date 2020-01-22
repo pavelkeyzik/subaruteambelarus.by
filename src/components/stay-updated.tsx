@@ -3,31 +3,30 @@ import styled from '@emotion/styled';
 import Instagram from '../../static/assets/instagram.svg';
 import Vk from '../../static/assets/vk.svg';
 import Youtube from '../../static/assets/youtube.svg';
-import { IEmotionStyledTheme } from '../types/theme';
 
-const Section = styled.section<IEmotionStyledTheme>`
+const Section = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: ${props => props.theme.colors.foreground};
+  background: var(--foreground);
   padding: 40px 20px;
   text-align: center;
-  background: ${props => props.theme.colors.stayUpdatedBackground};
+  background: var(--stayUpdatedBackground);
 `;
 
-const SectionTitle = styled.h2<IEmotionStyledTheme>`
-  color: ${props => props.theme.colors.headersColor};
+const SectionTitle = styled.h2`
+  color: var(--headersColor);
   margin-bottom: 0;
 `;
 
-const SocialLinks = styled.div<IEmotionStyledTheme>`
+const SocialLinks = styled.div`
   display: grid;
   grid-gap: 40px;
   grid-template-columns: repeat(3, 1fr);
   margin-top: 20px;
 
   & a {
-    fill: ${props => props.theme.colors.stayUpdatedSocialLinksFill};
+    fill: var(--stayUpdatedSocialLinksFill);
   }
 `;
 
