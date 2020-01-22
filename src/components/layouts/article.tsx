@@ -9,7 +9,7 @@ interface IArticleLayout {
 
 const LayoutContainer = styled.div`
   max-width: 1760px;
-  margin: 30px auto 0;
+  margin: 0 auto;
 
   @media screen and (min-width: ${layoutConfig.small.width}) {
     margin: 60px auto 0;
@@ -17,12 +17,10 @@ const LayoutContainer = styled.div`
 `;
 
 const LayoutContainerInner = styled.main`
-  background: var(--contentLayoutBackground);
-  margin: 0 16px;
-  padding-bottom: 60px;
-  border: 1px solid var(--headerBorderColor);
-
   @media screen and (min-width: ${layoutConfig.small.width}) {
+    padding-bottom: 60px;
+    border: 1px solid var(--headerBorderColor);
+    background: var(--contentLayoutBackground);
     margin: 0 40px;
   }
 `;

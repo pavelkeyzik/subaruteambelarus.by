@@ -2,9 +2,14 @@ import React from 'react';
 import { Link } from 'gatsby';
 import ArticleLayout from '../components/layouts/article';
 import styled from '@emotion/styled';
+import { layoutConfig } from '../components/layouts/config';
 
 const Main = styled.div`
-  padding: 10px 40px;
+  padding: 10px 16px;
+
+  @media screen and (min-width: ${layoutConfig.small.width}) {
+    padding: 10px 40px;
+  }
 `;
 
 function PageNotFound() {

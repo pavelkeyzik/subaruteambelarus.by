@@ -10,12 +10,12 @@ export interface IEmotionTheme {
     appLogoForeground: string;
     headerBorderColor: string;
     bodyBackground: string;
-    bodyForeground: string;
     linkColor: string;
     blockquoteBackground: string;
     blockquoteForeground: string;
     blockquoteBorderColor: string;
     postPreviewBackground: string;
+    postPreviewShadow: string;
     footerBorderColor: string;
     footerCopyrightColor: string;
     socialsColor: string;

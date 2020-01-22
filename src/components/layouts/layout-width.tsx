@@ -13,14 +13,12 @@ const Root = styled.div`
 `;
 
 const Inner = styled.div`
-  margin: 30px 16px 0;
-  padding: 0 20px;
-  background: var(--contentLayoutBackground);
-  border: 1px solid var(--headerBorderColor);
+  margin: 30px 0 0;
+  padding: 0 16px;
 
   @media screen and (min-width: ${layoutConfig.small.width}) {
     margin: 60px 40px 0;
-    padding: 10px 40px;
+    padding: 0;
   }
 `;
 

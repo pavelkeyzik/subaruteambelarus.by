@@ -7,8 +7,12 @@ import Youtube from '../../static/assets/youtube.svg';
 
 const FooterContainer = styled.footer`
   max-width: 1760px;
-  padding: 0 40px;
+  padding: 0 16px;
   margin: 40px auto 0;
+
+  @media screen and (min-width: ${layoutConfig.small.width}) {
+    padding: 0 40px;
+  }
 `;
 
 const FooterContent = styled.div`
