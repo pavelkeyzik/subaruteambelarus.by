@@ -17,6 +17,7 @@ const Button = styled.button<IToggleThemeButton>`
   align-items: center;
   padding: 0;
   margin: 0;
+  min-width: 40px;
   height: 40px;
   ${props => props.withText && `width: 40px;`}
   cursor: pointer;
@@ -36,15 +37,20 @@ const Button = styled.button<IToggleThemeButton>`
 
 export function ToggleThemeButton({ withText }: IToggleThemeButton) {
   const theme = useContext(ThemeContext);
-  const isLightTheme = theme.currentTheme === availableThemes.light;
+  const currentTheme = theme.currentTheme;
+  const isLightTheme = currentTheme === availableThemes.light;
 
   return (
     <Button onClick={theme.toggleTheme}>
-      {isLightTheme ? <Moon /> : <Sun />}
-      {withText && (
-        <span>
-          {isLightTheme ? 'Включить тёмную тему' : 'Включить светлую тему'}
-        </span>
+      {currentTheme && (
+        <React.Fragment>
+          {isLightTheme ? <Moon /> : <Sun />}
+          {withText && (
+            <span>
+              {isLightTheme ? 'Включить тёмную тему' : 'Включить светлую тему'}
+            </span>
+          )}
+        </React.Fragment>
       )}
     </Button>
   );

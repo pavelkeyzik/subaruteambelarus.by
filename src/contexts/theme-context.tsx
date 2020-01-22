@@ -10,14 +10,14 @@ export const ThemeContext = createContext({
 });
 
 export function ThemeContextProvider({ children }) {
-  const defaultTheme =
-    (typeof window !== 'undefined' && (window as MyWindow).__theme) ||
-    availableThemes.light;
-  const [currentTheme, setCurrentTheme] = useState(defaultTheme);
+  const [currentTheme, setCurrentTheme] = useState<string>('');
 
   useEffect(() => {
-    (window as MyWindow).__onThemeChange = () => {
-      setCurrentTheme((window as MyWindow).__theme);
+    const myWindow = window as MyWindow;
+
+    setCurrentTheme(myWindow.__theme);
+    myWindow.__onThemeChange = () => {
+      setCurrentTheme(myWindow.__theme);
     };
   }, []);
 
