@@ -22,6 +22,10 @@ const NewsGrid = styled.section`
   }
 `;
 
+const NewsTitle = styled.h2`
+  margin-top: 0;
+`;
+
 function NewsPage() {
   const pageTitle = 'Новости';
   const posts = usePosts();
@@ -34,7 +38,7 @@ function NewsPage() {
           {siteName} - {pageTitle}
         </title>
       </Helmet>
-      <h2>{pageTitle}</h2>
+      <NewsTitle>{pageTitle}</NewsTitle>
       <NewsGrid>
         {posts.map(post => (
           <PostPreview key={post.slug} post={post} />

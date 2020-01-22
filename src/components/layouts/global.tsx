@@ -33,7 +33,7 @@ function getGlobalStyles() {
       margin: 0;
       padding: 0;
       background: var(--bodyBackground);
-      color: var(--bodyForeground);
+      color: var(--foreground);
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
         Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
         sans-serif;

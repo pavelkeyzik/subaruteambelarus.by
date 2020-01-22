@@ -34,7 +34,7 @@ export const query = graphql`
 const ArticleContent = styled.div`
   max-width: 1080px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 16px;
 
   @media screen and (min-width: ${layoutConfig.small.width}) {
     padding: 0 40px;
