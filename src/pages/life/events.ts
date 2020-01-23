@@ -1,4 +1,4 @@
-export type EventType = 'carmeet' | 'trip';
+export type EventType = 'carmeet' | 'trip' | 'competition';
 
 export interface IEvent {
   title: string;
@@ -60,6 +60,66 @@ export const events: IEventSection[] = [
           'Слёт субаристов в г. Лепель совместно с КЦ «Forsage» и официальным диллером SUBARU в Беларуси «Ланкор»',
         type: 'trip',
         link: 'https://vk.com/album-75289878_259931099',
+      },
+    ],
+  },
+  {
+    headerTitle: '2018',
+    data: [
+      {
+        title: 'Слёт субаристов в г. Солигорск',
+        link: 'https://vk.com/album-75289878_253758522',
+        type: 'trip',
+      },
+    ],
+  },
+  {
+    headerTitle: '2017',
+    data: [
+      {
+        title: 'Первая сходка клуба SUBARU г. Солигорск',
+        link: 'https://vk.com/album-75289878_244084745',
+        type: 'carmeet',
+      },
+    ],
+  },
+  {
+    headerTitle: '2016',
+    data: [
+      {
+        title: 'Выезд в поле',
+        link: 'https://vk.com/album-75289878_238084688',
+        type: 'carmeet',
+      },
+      {
+        title: 'Выезд в поле в районе Сенницы',
+        link: 'https://vk.com/album-75289878_237831058',
+        type: 'carmeet',
+      },
+      {
+        title: 'Слёт субаристов в г. Могилёв',
+        link: 'https://vk.com/album-75289878_237831058',
+        type: 'trip',
+      },
+      {
+        title: 'Засветились на Onliner.by',
+        link: 'https://auto.onliner.by/2016/08/05/subaru-85',
+        type: 'carmeet',
+      },
+      {
+        title: 'Поездка в Брест',
+        link: 'https://vk.com/album-75289878_232530634',
+        type: 'competition',
+      },
+    ],
+  },
+  {
+    headerTitle: '2015',
+    data: [
+      {
+        title: 'Соревнования SUBARU vs BMW vs Mitsubishi vs Honda',
+        link: 'https://vk.com/album-75289878_218937394',
+        type: 'competition',
       },
     ],
   },
