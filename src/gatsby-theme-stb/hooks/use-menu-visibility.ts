@@ -18,7 +18,7 @@ export function useMenuVisibility(minimalOffset) {
     useCallback(() => {
       const currentPosition = window.pageYOffset;
 
-      if (currentPosition < minimalOffset) {
+      if (currentPosition > lastPosition && currentPosition < minimalOffset) {
         return;
       }
 
