@@ -30,6 +30,8 @@ export interface IEmotionTheme {
     mobileMenuIconColor: string;
     mobileMenuLinksColor: string;
     mobileMenuBackground: string;
+    tableBorderColor: string;
+    tableHeaderBackground: string;
   };
 }
 

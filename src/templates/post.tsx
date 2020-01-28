@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Image from 'gatsby-image';
 import Helmet from 'react-helmet';
@@ -7,6 +8,7 @@ import ArticleLayout from '../components/layouts/article';
 import useSiteMetadata from '../hooks/use-sitemetadata';
 import styled from '@emotion/styled';
 import { layoutConfig } from '../components/layouts/config';
+import { YouTube } from './post/you-tube';
 
 export const query = graphql`
   query PostData($slug: String!) {
@@ -98,7 +100,9 @@ function PostTemplate({ data: { mdx: post } }) {
           </ImageContent>
         </ImageContainer>
         <ArticleContent>
-          <MDXRenderer>{post.body}</MDXRenderer>
+          <MDXProvider components={{ YouTube }}>
+            <MDXRenderer>{post.body}</MDXRenderer>
+          </MDXProvider>
         </ArticleContent>
       </ArticleLayout>
     </React.Fragment>
