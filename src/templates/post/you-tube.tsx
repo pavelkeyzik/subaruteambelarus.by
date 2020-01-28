@@ -8,6 +8,7 @@ const IframeContainer = styled.div`
   height: 0;
   overflow: hidden;
   margin: 40px 0 60px;
+  background: var(--embeedBackground);
 
   iframe,
   object,

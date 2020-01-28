@@ -67,15 +67,11 @@ function getGlobalStyles() {
 
       td,
       th {
-        border: 2px solid var(--tableBorderColor);
+        border: 1px solid var(--tableBorderColor);
       }
 
       td, th {
         padding: 15px 20px;
-      }
-
-      th {
-        background: var(--tableHeaderBackground);
       }
     }
 
