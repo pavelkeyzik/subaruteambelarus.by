@@ -31,7 +31,7 @@ export interface IEmotionTheme {
     mobileMenuLinksColor: string;
     mobileMenuBackground: string;
     tableBorderColor: string;
-    tableHeaderBackground: string;
+    embeedBackground: string;
   };
 }
 

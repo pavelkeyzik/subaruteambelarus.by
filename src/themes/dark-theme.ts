@@ -32,6 +32,6 @@ export const darkTheme: IEmotionTheme = {
     mobileMenuLinksColor: '#ddd',
     mobileMenuBackground: '#0b0b0b',
     tableBorderColor: '#555',
-    tableHeaderBackground: '#2a2a2a',
+    embeedBackground: '#000',
   },
 };
