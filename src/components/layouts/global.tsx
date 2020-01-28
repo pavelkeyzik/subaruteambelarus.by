@@ -60,6 +60,25 @@ function getGlobalStyles() {
       color: var(--foreground);
     }
 
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 30px 0 40px;
+
+      td,
+      th {
+        border: 2px solid var(--tableBorderColor);
+      }
+
+      td, th {
+        padding: 15px 20px;
+      }
+
+      th {
+        background: var(--tableHeaderBackground);
+      }
+    }
+
     blockquote {
       display: flex;
       flex-direction: column;
