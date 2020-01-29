@@ -18,7 +18,7 @@ export const events: IEventSection[] = [
       {
         title: '5-ый День Рождения витебского клуба SUBARU',
         type: 'trip',
-        link: null,
+        link: 'https://vk.com/album-75289878_269927418',
       },
     ],
   },
