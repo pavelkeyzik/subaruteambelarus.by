@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import Instagram from '../../static/assets/instagram.svg';
 import Vk from '../../static/assets/vk.svg';
 import Youtube from '../../static/assets/youtube.svg';
+import { socialLinks } from '../constants';
 
 const Section = styled.section`
   display: flex;
@@ -39,16 +40,13 @@ function StayUpdated() {
         социальные сети
       </p>
       <SocialLinks>
-        <a href="https://vk.com/subaru_team_belarus" target="_blank">
+        <a href={socialLinks.vk} target="_blank">
           <Vk width="48" height="48" />
         </a>
-        <a href="https://instagram.com/subaruteambelarus.by" target="_blank">
+        <a href={socialLinks.instagram} target="_blank">
           <Instagram width="48" height="48" />
         </a>
-        <a
-          href="https://www.youtube.com/user/Skew4eg315/videos"
-          target="_blank"
-        >
+        <a href={socialLinks.youtube} target="_blank">
           <Youtube width="48" height="48" />
         </a>
       </SocialLinks>

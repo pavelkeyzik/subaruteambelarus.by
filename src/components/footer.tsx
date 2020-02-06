@@ -4,6 +4,7 @@ import { layoutConfig } from './layouts/config';
 import Instagram from '../../static/assets/instagram.svg';
 import Vk from '../../static/assets/vk.svg';
 import Youtube from '../../static/assets/youtube.svg';
+import { socialLinks } from '../constants';
 
 const FooterContainer = styled.footer`
   max-width: 1760px;
@@ -63,16 +64,13 @@ function Footer() {
       <FooterContent>
         <span>Все права защищены &copy; 2014-{new Date().getFullYear()}</span>
         <SocialLinksMenu>
-          <a href="https://instagram.com/subaruteambelarus.by" target="_blank">
+          <a href={socialLinks.instagram} target="_blank">
             <Instagram width="24" height="24" />
           </a>
-          <a href="https://vk.com/subaru_team_belarus" target="_blank">
+          <a href={socialLinks.vk} target="_blank">
             <Vk width="24" height="24" />
           </a>
-          <a
-            href="https://www.youtube.com/user/Skew4eg315/videos"
-            target="_blank"
-          >
+          <a href={socialLinks.youtube} target="_blank">
             <Youtube width="24" height="24" />
           </a>
         </SocialLinksMenu>
