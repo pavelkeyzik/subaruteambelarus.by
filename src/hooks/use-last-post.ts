@@ -15,7 +15,7 @@ function useLastPost(): IPost {
             hasVideo
             image {
               sharp: childImageSharp {
-                fluid(maxWidth: 600) {
+                fluid(maxWidth: 850) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }
