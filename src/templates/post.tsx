@@ -88,6 +88,14 @@ function PostTemplate({ data: { mdx: post } }) {
           property="og:image"
           content={post.frontmatter.image.sharp.fluid.src}
         />
+        <script type="application/ld+json">
+          {`{
+            '@context': 'https://schema.org/',
+            '@type': 'NewsArticle',
+            'email': 'subaruteambelarus.by@gmail.com',
+            'headline': '${post.frontmatter.title}',
+          }`}
+        </script>
       </Helmet>
       <ArticleLayout>
         <ImageContainer>

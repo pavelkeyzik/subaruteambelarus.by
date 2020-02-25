@@ -121,6 +121,13 @@ function Layout({ children }: ILayout) {
           {siteName} - {title}
         </title>
         <meta name="description" content={description} />
+        <script type="application/ld+json">
+          {`{
+            '@context': 'https://schema.org/',
+            '@type': 'Organization',
+            'email': 'subaruteambelarus.by@gmail.com',
+          }`}
+        </script>
       </Helmet>
       <Header />
       {children}
