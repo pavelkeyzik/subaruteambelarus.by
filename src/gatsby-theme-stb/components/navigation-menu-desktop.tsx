@@ -17,8 +17,13 @@ const NavContainer = styled.nav`
     padding: 0.2rem 0;
     border-bottom: 2px solid transparent;
 
+    :hover {
+      color: var(--foregroundHover);
+    }
+
     &.current-page {
       border-bottom: 2px solid var(--primary);
+      color: var(--foregroundActive);
     }
 
     @media screen and (min-width: ${layoutConfig.small.width}) {
