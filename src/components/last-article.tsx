@@ -5,6 +5,7 @@ import Image from 'gatsby-image';
 import useLastPost from '../hooks/use-last-post';
 import { css } from '@emotion/core';
 import { layoutConfig } from './layouts/config';
+import { routes } from '../constants';
 
 const Section = styled.section`
   display: grid;
@@ -35,12 +36,13 @@ const TagTitle = styled.span`
 
 function LastArticle() {
   const data = useLastPost();
+  const postEndpoint = `${routes.news}${data.slug}`;
 
   return (
     <Section>
       <ImageContainer>
         <Link
-          to={`/news/${data.slug}`}
+          to={postEndpoint}
           css={css`
             width: 100%;
           `}
@@ -51,10 +53,10 @@ function LastArticle() {
       <div>
         <TagTitle>Последние новости</TagTitle>
         <h2>
-          <Link to={`/news/${data.slug}`}>{data.title}</Link>
+          <Link to={postEndpoint}>{data.title}</Link>
         </h2>
         <p>{data.excerpt}</p>
-        <Link to={`/news/${data.slug}`}>Читать подробнее &rarr;</Link>
+        <Link to={postEndpoint}>Читать подробнее &rarr;</Link>
       </div>
     </Section>
   );

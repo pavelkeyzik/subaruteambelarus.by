@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import { layoutConfig } from '../../components/layouts/config';
 import { ToggleThemeButton } from './toggle-theme-button';
+import { routes } from '../../constants';
 
 const NavContainer = styled.nav`
   display: flex;
@@ -39,10 +40,10 @@ const ToggleButtonContainer = styled.div`
 export function NavigationMenuDesktop() {
   return (
     <NavContainer>
-      <Link to="/" activeClassName="current-page">
+      <Link to={routes.home} activeClassName="current-page">
         Главная
       </Link>
-      <Link to="/news" activeClassName="current-page">
+      <Link to={routes.news} activeClassName="current-page">
         Новости
       </Link>
       <ToggleButtonContainer>

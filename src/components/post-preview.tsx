@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import { IPost } from '../types/global';
 import Image from 'gatsby-image';
 import { layoutConfig } from './layouts/config';
+import { routes } from '../constants';
 
 const Article = styled.article`
   background: var(--postPreviewBackground);
@@ -40,16 +41,18 @@ interface IPostPreview {
 }
 
 function PostPreview({ post }: IPostPreview) {
+  const postEndpoint = `${routes.news}${post.slug}`;
+
   return (
     <Article>
-      <Link to={`/news/${post.slug}`}>
+      <Link to={postEndpoint}>
         <PostImageSection>
           <PostImage fluid={post.image.sharp.fluid} alt={post.title} fadeIn />
         </PostImageSection>
       </Link>
       <ArticleContent>
         <ArticleTitle>
-          <Link to={`/news/${post.slug}`}>{post.title}</Link>
+          <Link to={postEndpoint}>{post.title}</Link>
         </ArticleTitle>
         <p>{post.excerpt}</p>
       </ArticleContent>
