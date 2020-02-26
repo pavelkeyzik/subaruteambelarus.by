@@ -4,6 +4,7 @@ export const availableThemes = {
 };
 
 export const socialLinks = {
+  site: 'https://www.subaruteambelarus.by',
   youtube: 'https://www.youtube.com/channel/UCvuShrOlcCtLoJ7gEUwB0FA',
   instagram: 'https://instagram.com/subaruteambelarus.by',
   vk: 'https://vk.com/subaru_team_belarus',

@@ -6,7 +6,7 @@ import Footer from '../footer';
 import useSiteMetadata from '../../hooks/use-sitemetadata';
 import { ThemeContextProvider } from '../../contexts/theme-context';
 import { getTheme } from '../../themes/get-theme';
-import { availableThemes } from '../../constants';
+import { availableThemes, socialLinks } from '../../constants';
 
 function getThemesForBody() {
   const themes = Object.keys(availableThemes);
@@ -126,6 +126,21 @@ function Layout({ children }: ILayout) {
           {siteName} - {title}
         </title>
         <meta name="description" content={description} />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context" : "http://schema.org",
+              "@type" : "Organization",
+              "name" : "SUBARU TEAM BELARUS",
+              "url" : "${socialLinks.site}",
+              "sameAs" : [
+                "${socialLinks.vk}",
+                "${socialLinks.youtube}",
+                "${socialLinks.instagram}",
+              ],
+            }
+        `}
+        </script>
       </Helmet>
       <Header />
       {children}
