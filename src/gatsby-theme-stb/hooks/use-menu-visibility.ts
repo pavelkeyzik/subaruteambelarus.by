@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { throttle } from 'throttle-debounce';
 
-export function useMenuVisibility(minimalOffset) {
+export function useMenuVisibility(minimalOffset: number) {
   const [lastPosition, setLastPosition] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
 

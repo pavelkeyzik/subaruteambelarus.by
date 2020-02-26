@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import Header from '../header';
 import { Global } from '@emotion/core';
 import Helmet from 'react-helmet';
@@ -129,12 +129,16 @@ function Layout({ children }: ILayout) {
   );
 }
 
-const GlobalLayout = ({ children }) => {
+interface IGlobalLayout {
+  children: ReactNode;
+}
+
+function GlobalLayout({ children }: IGlobalLayout) {
   return (
     <ThemeContextProvider>
       <Layout>{children}</Layout>
     </ThemeContextProvider>
   );
-};
+}
 
 export default GlobalLayout;

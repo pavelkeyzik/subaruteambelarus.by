@@ -57,7 +57,17 @@ const ToggleThemeButtonContaner = styled.div`
   padding: 30px 40px;
 `;
 
-export function NavigationMenuMobile({ onOpen, onClose, isOpened }) {
+interface INavigationMenuMobile {
+  onOpen: () => void;
+  onClose: () => void;
+  isOpened: boolean;
+}
+
+export function NavigationMenuMobile({
+  onOpen,
+  onClose,
+  isOpened,
+}: INavigationMenuMobile) {
   return (
     <div>
       <IconButton onClick={onOpen}>

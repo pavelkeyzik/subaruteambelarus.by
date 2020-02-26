@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import styled from '@emotion/styled';
 import GlobalLayout from './global';
 import { layoutConfig } from './config';
@@ -22,7 +22,11 @@ const Inner = styled.div`
   }
 `;
 
-function LayoutWidth({ children }) {
+interface ILayoutWidth {
+  children: ReactNode;
+}
+
+function LayoutWidth({ children }: ILayoutWidth) {
   return (
     <GlobalLayout>
       <Root>

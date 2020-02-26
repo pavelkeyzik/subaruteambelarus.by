@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { layoutConfig } from '../../components/layouts/config';
 import { css } from '@emotion/core';
 
-export function MobileOnly({ children }) {
+interface IMobileOnly {
+  children: ReactNode;
+}
+
+export function MobileOnly({ children }: IMobileOnly) {
   return (
     <div
       css={css`
