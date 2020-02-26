@@ -11,6 +11,7 @@ export interface IEmotionTheme {
     headerBorderColor: string;
     bodyBackground: string;
     linkColor: string;
+    linkColorHover: string;
     blockquoteBackground: string;
     blockquoteForeground: string;
     blockquoteBorderColor: string;
