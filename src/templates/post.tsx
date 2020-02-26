@@ -77,7 +77,7 @@ function PostTemplate({ data: { mdx: post } }) {
   const { siteName } = useSiteMetadata();
 
   return (
-    <React.Fragment>
+    <ArticleLayout>
       <Helmet>
         <title>
           {siteName} - {post.frontmatter.title}
@@ -89,23 +89,21 @@ function PostTemplate({ data: { mdx: post } }) {
           content={post.frontmatter.image.sharp.fluid.src}
         />
       </Helmet>
-      <ArticleLayout>
-        <ImageContainer>
-          <Image
-            style={{ maxHeight: 450 }}
-            fluid={post.frontmatter.image.sharp.fluid}
-          />
-          <ImageContent>
-            <h1>{post.frontmatter.title}</h1>
-          </ImageContent>
-        </ImageContainer>
-        <ArticleContent>
-          <MDXProvider components={{ YouTube }}>
-            <MDXRenderer>{post.body}</MDXRenderer>
-          </MDXProvider>
-        </ArticleContent>
-      </ArticleLayout>
-    </React.Fragment>
+      <ImageContainer>
+        <Image
+          style={{ maxHeight: 450 }}
+          fluid={post.frontmatter.image.sharp.fluid}
+        />
+        <ImageContent>
+          <h1>{post.frontmatter.title}</h1>
+        </ImageContent>
+      </ImageContainer>
+      <ArticleContent>
+        <MDXProvider components={{ YouTube }}>
+          <MDXRenderer>{post.body}</MDXRenderer>
+        </MDXProvider>
+      </ArticleContent>
+    </ArticleLayout>
   );
 }
 
