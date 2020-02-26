@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { layoutConfig } from '../../components/layouts/config';
 import { css } from '@emotion/core';
 
-export function DesktopOnly({ children }) {
+interface IDesktopOnly {
+  children: ReactNode;
+}
+
+export function DesktopOnly({ children }: IDesktopOnly) {
   return (
     <div
       css={css`

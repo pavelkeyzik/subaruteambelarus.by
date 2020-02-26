@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
     "sourceMap": true,
-    "noImplicitAny": false,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
     "module": "esnext",
     "strict": true,
     "target": "es6",
