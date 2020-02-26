@@ -47,9 +47,11 @@ const SocialLinksMenu = styled.nav`
 
   a {
     margin: 0 0.7rem;
+    fill: var(--stayUpdatedSocialLinksFill);
+    transition: fill 0.2s;
 
-    svg {
-      fill: var(--socialsColor);
+    :hover {
+      fill: var(--stayUpdatedSocialLinksFillHover);
     }
 
     :last-child {

@@ -27,6 +27,7 @@ export interface IEmotionTheme {
     imageBackground: string;
     stayUpdatedBackground: string;
     stayUpdatedSocialLinksFill: string;
+    stayUpdatedSocialLinksFillHover: string;
     contentLayoutBackground: string;
     figureCaptionForeground: string;
     articleBigTitleForeground: string;
