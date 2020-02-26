@@ -54,6 +54,11 @@ function getGlobalStyles() {
 
     a {
       color: var(--linkColor);
+      transition: color .2s;
+
+      :hover {
+        color: var(--linkColorHover);
+      }
     }
 
     p {

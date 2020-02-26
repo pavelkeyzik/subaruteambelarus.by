@@ -1,6 +1,7 @@
 import { IEmotionTheme } from '../types/theme';
 
 const ACCENT = '#006ad1';
+const ACCENT_HOVER = '#00509e';
 
 export const lightTheme: IEmotionTheme = {
   colors: {
@@ -12,6 +13,7 @@ export const lightTheme: IEmotionTheme = {
     appLogoForeground: '#333',
     headerBorderColor: '#eee',
     linkColor: ACCENT,
+    linkColorHover: ACCENT_HOVER,
     blockquoteBackground: '#eee',
     blockquoteForeground: '#555',
     blockquoteBorderColor: '#555',
