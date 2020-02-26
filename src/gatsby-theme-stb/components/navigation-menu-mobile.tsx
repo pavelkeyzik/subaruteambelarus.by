@@ -5,6 +5,7 @@ import MenuIcon from '../../../static/assets/menu.svg';
 import CloseMenuIcon from '../../../static/assets/x.svg';
 import { IconButton } from './icon-button';
 import { ToggleThemeButton } from './toggle-theme-button';
+import { routes } from '../../constants';
 
 const MobileNavContainer = styled.nav`
   display: flex;
@@ -81,10 +82,10 @@ export function NavigationMenuMobile({
             </IconButton>
           </MenuHeader>
           <MobileNavContainer>
-            <Link to="/" activeClassName="current-page">
+            <Link to={routes.home} activeClassName="current-page">
               Главная
             </Link>
-            <Link to="/news" activeClassName="current-page">
+            <Link to={routes.news} activeClassName="current-page">
               Новости
             </Link>
           </MobileNavContainer>

@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import ArticleLayout from '../components/layouts/article';
 import styled from '@emotion/styled';
 import { layoutConfig } from '../components/layouts/config';
+import { routes } from '../constants';
 
 const Main = styled.div`
   padding: 10px 16px;
@@ -23,10 +24,10 @@ function PageNotFound() {
         </p>
         <ul>
           <li>
-            <Link to="/">Главная</Link>
+            <Link to={routes.home}>Главная</Link>
           </li>
           <li>
-            <Link to="/news">Новости</Link>
+            <Link to={routes.news}>Новости</Link>
           </li>
         </ul>
       </Main>
