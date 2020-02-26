@@ -23,6 +23,8 @@ const ImageContainer = styled.div`
   display: flex;
   justify-content: flex-start;
   background: var(--imageBackground);
+  border-radius: 6px;
+  overflow: hidden;
 `;
 
 const TagTitle = styled.span`
