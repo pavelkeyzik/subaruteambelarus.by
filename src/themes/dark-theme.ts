@@ -7,6 +7,8 @@ export const darkTheme: IEmotionTheme = {
   colors: {
     primary: ACCENT,
     foreground: '#bbb',
+    foregroundHover: '#ccc',
+    foregroundActive: '#eee',
     headersColor: '#eee',
     headerBackground: '#222',
     headerBorderColor: 'transparent',

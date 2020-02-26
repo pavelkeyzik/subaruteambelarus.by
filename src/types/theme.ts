@@ -5,6 +5,8 @@ export interface IEmotionTheme {
   colors: {
     primary: string;
     foreground: string;
+    foregroundHover: string;
+    foregroundActive: string;
     headersColor: string;
     headerBackground: string;
     appLogoForeground: string;

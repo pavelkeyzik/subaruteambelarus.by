@@ -6,7 +6,9 @@ const ACCENT_HOVER = '#00509e';
 export const lightTheme: IEmotionTheme = {
   colors: {
     primary: ACCENT,
-    foreground: '#333',
+    foreground: '#555',
+    foregroundHover: '#111',
+    foregroundActive: '#000',
     headersColor: '#111',
     headerBackground: '#fff',
     bodyBackground: '#f6f7fa',
