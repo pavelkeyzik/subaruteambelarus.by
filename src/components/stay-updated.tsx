@@ -28,6 +28,11 @@ const SocialLinks = styled.div`
 
   & a {
     fill: var(--stayUpdatedSocialLinksFill);
+    transition: fill 0.2s;
+
+    :hover {
+      fill: var(--stayUpdatedSocialLinksFillHover);
+    }
   }
 `;
 

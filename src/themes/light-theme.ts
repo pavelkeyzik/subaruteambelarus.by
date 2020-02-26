@@ -29,6 +29,7 @@ export const lightTheme: IEmotionTheme = {
     imageBackground: '#e9e9ec',
     stayUpdatedBackground: '#fefefe',
     stayUpdatedSocialLinksFill: '#444',
+    stayUpdatedSocialLinksFillHover: '#888',
     contentLayoutBackground: '#fff',
     figureCaptionForeground: '#555',
     articleBigTitleForeground: '#fff',

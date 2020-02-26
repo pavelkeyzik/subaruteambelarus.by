@@ -29,6 +29,7 @@ export const darkTheme: IEmotionTheme = {
     imageBackground: '#202020',
     stayUpdatedBackground: '#1b1b1b',
     stayUpdatedSocialLinksFill: '#ccc',
+    stayUpdatedSocialLinksFillHover: '#eee',
     contentLayoutBackground: '#222',
     figureCaptionForeground: '#aaa',
     articleBigTitleForeground: '#fff',
