@@ -25,10 +25,10 @@ const ArticleTitle = styled.h3`
 
 const PostImage = styled(Image)`
   transition: transform 0.2s;
-  transform: scale(1.02);
+  transform: scale(1);
 
   :hover {
-    transform: scale(1);
+    transform: scale(1.05);
   }
 `;
 
