@@ -20,12 +20,21 @@ const Section = styled.section`
   }
 `;
 
-const ImageContainer = styled.div`
+const PostImageContainer = styled.div`
   display: flex;
   justify-content: flex-start;
   background: var(--imageBackground);
   border-radius: 6px;
   overflow: hidden;
+`;
+
+const PostImage = styled(Image)`
+  transition: transform 0.2s;
+  transform: scale(1);
+
+  :hover {
+    transform: scale(1.05);
+  }
 `;
 
 const TagTitle = styled.span`
@@ -40,16 +49,16 @@ function LastArticle() {
 
   return (
     <Section>
-      <ImageContainer>
+      <PostImageContainer>
         <Link
           to={postEndpoint}
           css={css`
             width: 100%;
           `}
         >
-          <Image fluid={data.image.sharp.fluid} />
+          <PostImage fluid={data.image.sharp.fluid} />
         </Link>
-      </ImageContainer>
+      </PostImageContainer>
       <div>
         <TagTitle>Последние новости</TagTitle>
         <h2>
