@@ -5,6 +5,7 @@ import { IPost } from '../types/global';
 import Image from 'gatsby-image';
 import { layoutConfig } from './layouts/config';
 import { routes } from '../constants';
+import { VideoIcon } from './video-icon';
 
 const Article = styled.article`
   background: var(--postPreviewBackground);
@@ -23,17 +24,27 @@ const ArticleTitle = styled.h3`
   margin-bottom: 1.5rem;
 `;
 
-const PostImage = styled(Image)`
-  transition: transform 0.2s;
-  transform: scale(1);
+const PostImage = styled(Image)``;
 
-  :hover {
+const PostImageSection = styled.div`
+  position: relative;
+  overflow: hidden;
+
+  ${PostImage} {
+    transition: transform 0.2s;
+    transform: scale(1);
+  }
+
+  :hover ${PostImage} {
     transform: scale(1.05);
   }
 `;
 
-const PostImageSection = styled.div`
-  overflow: hidden;
+const VideoIconContaner = styled.div`
+  z-index: 0;
+  position: absolute;
+  top: 10px;
+  right: 10px;
 `;
 
 interface IPostPreview {
@@ -48,6 +59,11 @@ function PostPreview({ post }: IPostPreview) {
       <Link to={postEndpoint}>
         <PostImageSection>
           <PostImage fluid={post.image.sharp.fluid} alt={post.title} fadeIn />
+          {post.hasVideo && (
+            <VideoIconContaner>
+              <VideoIcon />
+            </VideoIconContaner>
+          )}
         </PostImageSection>
       </Link>
       <ArticleContent>

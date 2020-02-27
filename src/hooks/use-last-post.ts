@@ -12,6 +12,7 @@ function useLastPost(): IPost {
           frontmatter {
             title
             slug
+            hasVideo
             image {
               sharp: childImageSharp {
                 fluid(maxWidth: 600) {
@@ -30,6 +31,7 @@ function useLastPost(): IPost {
     title: post.frontmatter.title,
     slug: post.frontmatter.slug,
     image: post.frontmatter.image,
+    hasVideo: post.frontmatter.hasVideo,
     excerpt: post.excerpt,
   }))[0];
 }

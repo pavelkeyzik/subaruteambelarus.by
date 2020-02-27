@@ -10,6 +10,7 @@ function usePosts(): IPost[] {
             title
             slug
             author
+            hasVideo
             image {
               sharp: childImageSharp {
                 fluid(maxWidth: 920) {
@@ -29,6 +30,7 @@ function usePosts(): IPost[] {
     author: post.frontmatter.author,
     slug: post.frontmatter.slug,
     image: post.frontmatter.image,
+    hasVideo: post.frontmatter.hasVideo,
     excerpt: post.excerpt,
   }));
 }

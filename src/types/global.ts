@@ -8,6 +8,7 @@ export interface IPost {
   image: {
     sharp: GatsbyImageProps;
   };
+  hasVideo: boolean;
 }
 
 export type MyWindow = typeof window & {
