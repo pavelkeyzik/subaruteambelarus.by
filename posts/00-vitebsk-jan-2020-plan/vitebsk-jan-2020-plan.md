@@ -4,6 +4,7 @@ slug: vitebsk-jan-2020-plan
 author: Pavel Keyzik
 image: ./images/main.jpg
 createDate: 2020-01-08
+hasVideo: false
 ---
 
 Уже совсем скоро, в г. Витебск пройдет очередной слёт субаристов. В этот раз мы собираемся с целью отметить 5-ый День Рождения <a href="https://vk.com/subaru_team_vitebsk" target="_blank">SUBARU CommuniTeam Vitebsk</a>. Приехать на данное мероприятие может каждый желающий.

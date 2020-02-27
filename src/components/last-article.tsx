@@ -6,6 +6,7 @@ import useLastPost from '../hooks/use-last-post';
 import { css } from '@emotion/core';
 import { layoutConfig } from './layouts/config';
 import { routes } from '../constants';
+import { VideoIcon } from './video-icon';
 
 const Section = styled.section`
   display: grid;
@@ -21,6 +22,7 @@ const Section = styled.section`
 `;
 
 const PostImageContainer = styled.div`
+  position: relative;
   display: flex;
   justify-content: flex-start;
   background: var(--imageBackground);
@@ -43,6 +45,13 @@ const TagTitle = styled.span`
   color: var(--tagForeground);
 `;
 
+const VideoIconContaner = styled.div`
+  z-index: 0;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+`;
+
 function LastArticle() {
   const data = useLastPost();
   const postEndpoint = `${routes.news}${data.slug}`;
@@ -57,6 +66,11 @@ function LastArticle() {
           `}
         >
           <PostImage fluid={data.image.sharp.fluid} />
+          {data.hasVideo && (
+            <VideoIconContaner>
+              <VideoIcon />
+            </VideoIconContaner>
+          )}
         </Link>
       </PostImageContainer>
       <div>
