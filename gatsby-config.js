@@ -7,6 +7,7 @@
 module.exports = {
   siteMetadata: {
     siteName: 'SUBARU TEAM BELARUS',
+    siteUrl: 'https://subaruteambelarus.by',
     title: 'Официальный сайт клуба Субару в Беларуси',
     description:
       'Здесь вы можете найти новости о нашем клубе, а также узнать как с нами познакомиться поближе и не пропускать наши встречи',
@@ -17,6 +18,7 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-source-filesystem',
       options: { path: `./static/images/` },
