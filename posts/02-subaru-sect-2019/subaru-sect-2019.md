@@ -3,7 +3,7 @@ title: Встреча с SubaruSect в Минске
 slug: subaru-sect-2019
 author: Pavel Keyzik
 image: ./images/main.jpg
-createDate: 2020-02-10
+createDate: 2020-06-04
 hasVideo: true
 ---
 
@@ -48,4 +48,4 @@ hasVideo: true
 
 Ниже вы сможете найти то самое видео, с канала <a href="https://www.youtube.com/channel/UCGBgT1ttVVq4RIZbo9hp_LA" target="_blank">SubaruSect</a>, где записан отчёт о поездке в Беларусь. А фотографии с самой встречи можно найти в <a href="https://vk.com/album-75289878_264504386" target="_blank">нашем фотоальбоме</a>.
 
-<!-- <YouTube link="PASTE_EMBEDE_LINK_TO_VIDEO" /> -->
+<YouTube link="https://www.youtube.com/embed/189o5PDgqo0" />
